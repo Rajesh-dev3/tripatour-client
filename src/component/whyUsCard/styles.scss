@@ -1,0 +1,28 @@
+.why-us-card {
+  width: calc(100% - 20px);
+  padding: 10px;
+  .why-us-card-heading {
+    display: flex;
+    gap: 10px;
+    color: black;
+    align-items: center;
+    text-overflow: wrap;
+    margin-bottom: 5px;
+    span {
+      display: flex;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: #3ec685;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .why-us-card-content {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #59595b;
+    font-weight: 400;
+    font-family: "Poppins";
+  }
+}
