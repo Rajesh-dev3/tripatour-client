@@ -1,35 +1,33 @@
-import  { useState } from "react";
+import { useState } from "react";
+import { useFeedBackMutation } from "../../service/feedBack/Feedback";
 ///styles
 import "./styles.scss";
-import { useFeedBackMutation } from "../../service/feedBack/Feedback";
 const Footer = () => {
-  const [feedbackForm, setFeedbackForm] = useState(
-    {
-      firstName:"",
-      lastName:"",
-      email:""
-  }
-  )
-  const [error, setError] = useState( {
-    firstName:"",
-    lastName:"",
-    email:""
-})
+  const [feedbackForm, setFeedbackForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+  const [error, setError] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
+  const [trigger, { data }] = useFeedBackMutation();
 
-  const [trigger,{data}]=useFeedBackMutation()
+  const formHandler = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFeedbackForm((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
 
-  const formHandler = (e)=>{
-    const name = e.target.name
-    const value = e.target.value
-    setFeedbackForm((prev)=>{
-      return{
-        ...prev,[name]:value
-      }
-    })
-  }
-
-  const submitHandler = ()=>{
+  const submitHandler = () => {
     let isSuccess = false;
 
     for (const key of Object.keys(feedbackForm)) {
@@ -49,9 +47,9 @@ const Footer = () => {
     }
 
     if (isSuccess) {
-      trigger(feedbackForm)
+      trigger(feedbackForm);
     }
-  }
+  };
   return (
     <div className="footer-container">
       <div className="footer-form">
@@ -60,19 +58,33 @@ const Footer = () => {
         </div>
         <div className="form">
           <div>
-
-          <input type="text" placeholder="FIRST NAME" name="firstName" onChange={(e)=>formHandler(e)}/>
+            <input
+              type="text"
+              placeholder="FIRST NAME"
+              name="firstName"
+              onChange={(e) => formHandler(e)}
+            />
           </div>
           <div>
-
-          <input type="text" placeholder="LAST NAME" name="lastName" onChange={(e)=>formHandler(e)}/>
+            <input
+              type="text"
+              placeholder="LAST NAME"
+              name="lastName"
+              onChange={(e) => formHandler(e)}
+            />
           </div>
           <div>
-
-          <input type="text" placeholder="EMAIL" name="email" onChange={(e)=>formHandler(e)}/>
+            <input
+              type="text"
+              placeholder="EMAIL"
+              name="email"
+              onChange={(e) => formHandler(e)}
+            />
           </div>
           <div className="btn-div">
-            <button className="form-submit" onClick={()=>submitHandler()}>Submit</button>
+            <button className="form-submit" onClick={() => submitHandler()}>
+              Submit
+            </button>
           </div>
         </div>
       </div>
@@ -82,10 +94,13 @@ const Footer = () => {
           <li>INDIA: +91 98550 56307</li>
           <li>enquiries@tripatours.com</li>
 
-          <li>Studio 65, roussefield,
-            <br/>
-             DUBAI, 768364<br/>
-             United ARAB Emirates</li>
+          <li>
+            Studio 65, roussefield,
+            <br />
+            DUBAI, 768364
+            <br />
+            United ARAB Emirates
+          </li>
         </ul>
       </div>
     </div>
