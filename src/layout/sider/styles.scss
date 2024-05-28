@@ -1,4 +1,5 @@
 @import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
 .sider-container {
   background-color: transparent;
   height: 100%;
@@ -45,7 +46,7 @@
     margin: 0%;
     gap: 20px;
     padding: 0%;
-    @media screen and (max-width: 780px) {
+     @include media(phone){
       flex-direction: column;
       justify-content: start;
       align-items: start;

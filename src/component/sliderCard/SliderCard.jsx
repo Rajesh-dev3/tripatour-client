@@ -11,7 +11,7 @@ const SliderCard = ({ data }) => {
       <div className="bottom-col">
         <h4 className="card-heading">{data?.description}</h4>
         <p>{data?.timing} · Kymco/Grizzly 350CC</p>
-        <span>AED {data?.price}</span>
+        <span>{data?.price}</span>
       </div>
     </div>
   );

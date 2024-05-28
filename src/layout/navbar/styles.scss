@@ -1,4 +1,5 @@
 @import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
 .nav-container {
   width: calc(100% - 40px);
   background-color: transparent;
@@ -11,7 +12,7 @@
   padding-block: 10px;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: 780px) {
+   @include media(phone){
     padding-inline: 10px;
     padding-block: 0px;
     width: calc(100% - 20px);
@@ -23,12 +24,12 @@
     svg {
       color: $black;
     }
-    @media screen and (max-width: 780px) {
+     @include media(phone){
       gap: 10px;
       width: 30%;
     }
     img {
-      @media screen and (max-width: 780px) {
+       @include media(phone){
         width: 100%;
       }
     }
@@ -36,7 +37,7 @@
   .nav-list {
     border-bottom: 1px solid $border;
     display: block;
-    @media screen and (max-width: 780px) {
+     @include media(phone){
       display: none;
     }
     ul {
@@ -57,7 +58,7 @@
     }
   }
   .contact-info {
-    @media screen and (max-width: 780px) {
+     @include media(phone){
       width: 70%;
     }
     ul {
@@ -69,7 +70,7 @@
         align-items: center;
         gap: 10px;
         justify-content: end;
-        @media screen and (max-width: 780px) {
+         @include media(phone){
           font-size: 12px;
         }
         span {
@@ -112,7 +113,7 @@
 }
 .ham-icon {
   display: none;
-  @media screen and (max-width: 780px) {
+   @include media(phone){
     display: block;
   }
 }

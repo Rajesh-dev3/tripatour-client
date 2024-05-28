@@ -118,12 +118,12 @@ const Home = () => {
           return (
             <div className="slider-section" key={item.heading}>
               <div className="slider-heading">
-                {item?.tour?.name}
-                <p className="para">{item?.tour?.description}</p>
+                {item?.category?.name}
+                <p className="para">{item?.category?.description}</p>
               </div>
               <div className="slider-col">
                 <div className="slider-container">
-                  <SliderComponent data={item?.details} />
+                  <SliderComponent data={item?.tours} />
                 </div>
                 <div className="slider-bg"></div>
               </div>

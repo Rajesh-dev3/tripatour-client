@@ -3,6 +3,7 @@ import { ImWhatsapp } from "react-icons/im";
 import { IoIosMenu } from "react-icons/io";
 
 import { useEffect, useState } from "react";
+
 ////styles
 import "./styles.scss";
 export const navList = [
@@ -12,7 +13,7 @@ export const navList = [
   },
   {
     name: "About Us",
-    del: "discovering desert adventures",
+    del: "Discovering desert adventures",
   },
   {
     name: "Buggy Tours",
@@ -87,7 +88,7 @@ const Navbar = ({ fun }) => {
             <span>
               <ImWhatsapp />
             </span>
-            +971 56 188 5977{" "}
+            +971 56 188 5977
           </li>
         </ul>
       </div>
