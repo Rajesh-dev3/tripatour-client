@@ -4,11 +4,11 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import SliderCard from "../sliderCard/SliderCard";
 
 ///styles
 import "./styles.scss";
-const SliderComponent = ({ data }) => {
+import SliderCard2 from "../sliderCard/SliderCard2";
+const FavSliderComponent = ({ data }) => {
   var settings = {
     dots: true,
     infinite: false,
@@ -43,14 +43,13 @@ const SliderComponent = ({ data }) => {
       },
     ],
   };
-console.log(data,"fgkjfmgk")
   return (
     <Slider {...settings}>
       {data?.map((item, index) => {
-        return <SliderCard key={index} data={item} />;
+        return <SliderCard2 key={index} data={item} />;
       })}
     </Slider>
   );
 };
 
-export default SliderComponent;
+export default FavSliderComponent;

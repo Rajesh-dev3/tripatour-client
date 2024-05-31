@@ -2,13 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { cardImage } from "../../assets/images";
 ////styles
 import "./styles.scss";
-const SliderCard = ({ data }) => {
+const SliderCard2 = ({ data }) => {
   const nav = useNavigate()
   const navHandler = (url)=>{
     nav("/tour-detail/"+url)
   }
   return (
-    <div className="slider-card" onClick={()=>navHandler(data?._id)}>
+    <div className="slider-card2" onClick={()=>navHandler(data?._id)}>
       <div className="top-col" style={{ backgroundImage: `url(${cardImage})` }}>
         {/* <img src={cardImage}/> */}
         {/* <img src={data?.image}/> */}
@@ -22,4 +22,4 @@ const SliderCard = ({ data }) => {
   );
 };
 
-export default SliderCard;
+export default SliderCard2;
