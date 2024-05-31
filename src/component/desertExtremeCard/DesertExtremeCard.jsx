@@ -1,11 +1,12 @@
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 ////styles
 import "./styles.scss"
+import { desertExtreme } from '../../assets/images';
 const DesertExtremeCard = () => {
   return (
     <div className='desert-extreme-card-col'>
         <div className="heading-extreme-card">
-           
+           <img src={desertExtreme} alt="" />
         </div>
         <div className="desert-extreme-content">
             <h3>Property Highlights</h3>

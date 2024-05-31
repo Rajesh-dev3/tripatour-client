@@ -7,6 +7,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import "./styles.scss"
 import { Rating } from "@mui/material";
 import { useAddFavouriteTourMutation, useGetFavoriteTourQuery } from "../../service/favourite/AddFavourite";
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
 const DetailTabs = () => {
@@ -58,6 +59,24 @@ const DetailTabs = () => {
     notify(data?.message).success()
    }
   }, [data])
+  const {data:favouriteData} = useGetFavoriteTourQuery()
+  const [checkFavourite, setCheckFavourite] = useState(false)
+  useEffect(() => {
+    const checkFav =favouriteData?.data.find((item)=>item?._id == id)
+      // if(item._id == id){
+      //  
+      // }else{
+      //   return (
+      //     <FavoriteOutlinedIcon/>
+      //   )
+      // }
+      if(Object.keys(checkFav || {} ).length){
+        setCheckFavourite(true)
+      }else{
+        setCheckFavourite(false)
+      }
+  }, [id,favouriteData])
+  
 
   return (
 
@@ -77,7 +96,7 @@ const DetailTabs = () => {
         <div className="slides">
           <div className="preview-slide">
             <img src={activePreviewImg} alt="" />
-            <div className="heart-icon" onClick={()=>addFavouriteTour()}><FavoriteBorderOutlinedIcon/></div>
+            <div className={` ${checkFavourite ?"heart-icon2":"heart-icon"}`} onClick={()=>addFavouriteTour()}>{!checkFavourite ?<FavoriteBorderOutlinedIcon/>:<FavoriteOutlinedIcon /> }</div>
           </div>
           <div className="slides-list">
           <Slider {...settings}>

@@ -13,7 +13,7 @@ const SliderComponent = ({ data }) => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow:preview|| 3,
+    slidesToShow:3,
     slidesToScroll: 3,
     variableWidth: false,
     responsive: [
