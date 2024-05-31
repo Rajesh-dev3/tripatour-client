@@ -8,9 +8,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const url = import.meta.env.VITE_BASE_URL;
 export const addFavouriteTour = createApi({
   reducerPath: "addFavouriteTour",
+
   baseQuery: fetchBaseQuery({
     baseUrl: url,
   }),
+  tagTypes:["fav"],
   endpoints: (builder) => ({
     addFavouriteTour: builder.mutation({
       query: (body) => ({
@@ -18,6 +20,7 @@ export const addFavouriteTour = createApi({
         method: "POST",
         body
       }),
+      invalidatesTags:["fav"]
     }),
     getFavoriteTour: builder.query({
       query: (body) => ({
@@ -25,6 +28,7 @@ export const addFavouriteTour = createApi({
         method: "GET",
         body
       }),
+      providesTags:["fav"]
     }),
   }),
 });
