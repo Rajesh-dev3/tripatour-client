@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFeedBackMutation } from "../../service/feedBack/Feedback";
 ///styles
 import "./styles.scss";
+import { notify } from "../../component/toast/Toast";
 const Footer = () => {
   const [feedbackForm, setFeedbackForm] = useState({
     firstName: "",
@@ -48,8 +49,16 @@ const Footer = () => {
 
     if (isSuccess) {
       trigger(feedbackForm);
+    }else{
+      notify("Please fill all form").error()
     }
   };
+
+  useEffect(() => {
+    if(data){
+     notify(data?.message).success()
+    }
+   }, [data])
   return (
     <div className="footer-container">
       <div className="footer-form">

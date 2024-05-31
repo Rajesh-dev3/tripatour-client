@@ -1,5 +1,4 @@
-import { IoIosStar } from "react-icons/io";
-import { SiNike } from "react-icons/si";
+
 import WhyUsCard from "../../component/whyUsCard/WhyUsCard";
 import { about, buggy } from "../../assets/images";
 import SliderComponent from "../../component/slider/Slider";
@@ -47,46 +46,9 @@ const Home = () => {
     ],
   };
   return (
-    <div>
-      <div className="top-banner">
-        <div className="center-box">
-          <p>Wild Excursions</p>
-          <h1>
-            Experience dubai <br />
-            Safari wonders!
-          </h1>
-          <button>Explore Now</button>
-        </div>
-        <div className="top-banner-bottom-rectangle">
-          <ul>
-            <li>
-              <span>
-                <IoIosStar />
-              </span>
-              4.6 Rated
-            </li>
-            <li>
-              <span>
-                <SiNike />
-              </span>
-              100% Customised trips
-            </li>
-            <li>
-              <span>
-                <SiNike />
-              </span>
-              100% Customised trips
-            </li>
-            <li>
-              <span>
-                <SiNike />
-              </span>
-              24x7 concierge
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="layout-center-col">
+    <>
+   
+      
         <div className="about-section">
           <div className="about-left-col">
             <img src={about} alt="" />
@@ -153,8 +115,8 @@ const Home = () => {
             <GalleryCard />
           </Slider>
         </div>
-      </div>
-    </div>
+    
+    </>
   );
 };
 

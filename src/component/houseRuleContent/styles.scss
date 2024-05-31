@@ -1,0 +1,131 @@
+
+.check-in-col{
+display: flex;
+align-items: center;
+justify-content: start;
+gap: 5%;
+padding-block:10px ;
+&:nth-child(1){
+margin-block: 10px;
+}
+&:nth-child(3){
+margin-block: 10px;
+}
+&:nth-child(5){
+align-items: start;
+gap: 4%;
+}
+h5{
+margin: 0%;
+padding: 0%;
+color: black;
+font-size: 12px;
+width: 15%;
+}
+p{
+margin: 0%;
+width: 30%;
+font-size: 12px;
+width: 85%;
+
+// 
+font-family: sans-serif;
+font-weight: 100;
+.progess-bar{
+width: 40%;
+
+.MuiLinearProgress-bar{
+background-color: green;
+}
+}
+}
+ul{
+margin: 0%;
+padding: 0%;
+li{
+
+list-style: none;
+
+
+}
+}
+}
+.time-p{
+  position: relative;
+}
+.progress-time{
+  position: absolute;
+  left: 22%;
+  bottom: 150%;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.progress-time2{
+  position: absolute;
+  left: 18%;
+  bottom: 150%;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.tooltip{
+  padding: 5px;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 99;
+  bottom: -340%;
+  font-size: 10px;
+  left: 27%;
+  border: 1px solid rgb(175, 174, 174);
+  border-radius: 3px;
+  &::before{
+    content: "";
+    position: absolute;
+width: 10px;
+height: 10px;
+border: 1px solid rgb(175, 174, 174);
+left: 44%;
+top: -25%;
+background-color: white;
+transform: rotate(46deg);
+border-bottom:none;
+border-right: none;
+// transform: translateY(50%);
+  }
+}
+.tooltip2{
+  padding: 5px;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 3px;
+  z-index: 99;
+  bottom: -340%;
+  font-size: 10px;
+  left: 5%;
+  border: 1px solid rgb(175, 174, 174);
+  &::before{
+    content: "";
+    position: absolute;
+width: 10px;
+height: 10px;
+border: 1px solid rgb(175, 174, 174);
+left: 44%;
+top: -25%;
+background-color: white;
+transform: rotate(46deg);
+border-bottom:none;
+border-right: none;
+// tr
+  }
+}

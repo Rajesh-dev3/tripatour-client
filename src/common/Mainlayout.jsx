@@ -3,6 +3,7 @@ import Navbar from "../layout/navbar/Navbar";
 import Footer from "../layout/footer/Footer";
 import { Outlet } from "react-router-dom";
 import Sider from "../layout/sider/Sider";
+import TopBanner from "../component/topBanner/TopBanner";
 
 const Mainlayout = () => {
   const [siderOpen, setSiderOpen] = useState(false);
@@ -22,7 +23,11 @@ const Mainlayout = () => {
     <>
       {siderOpen && <Sider fun={siderOpenHandler} />}
       <Navbar fun={siderOpenHandler} siderOpen={siderOpen} />
+      <TopBanner/>
+      <div className="layout-center-col">
+
       <Outlet />
+      </div>
       <Footer />
     </>
   );

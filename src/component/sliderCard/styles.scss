@@ -8,6 +8,7 @@
   background-color: $white;
   border: 0px solid $black;
   overflow: hidden;
+  cursor: pointer;
   .top-col {
     background-size: 100% 100%;
     width: 100%;
@@ -85,5 +86,70 @@
   z-index: 999999;
   &::before {
     color: $black;
+  }
+}
+
+
+.slider-card2{
+  width: calc(100% - 0px);
+  height: 220px;
+  border-radius: 10px;
+  margin-inline: 0px !important;
+  // filter: drop-shadow(0px 6px 24.5px rgba(22,19,22,0.09));
+  background-color: $white;
+  border: 0px solid $black;
+  overflow: hidden;
+  cursor: pointer;
+  .top-col {
+
+    background-size: 100% 100%;
+    width: 100%;
+    height: 60%;
+    margin-inline: 0px !important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bottom-col {
+    width: calc(100% - 4px);
+    padding-inline: 2px;
+    padding-block: 10px;
+    height: 40%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    .card-heading {
+      font-size: 10px;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      color: $heading;
+      font-weight: bold;
+      text-align: center;
+      margin: 0%;
+      padding: 0%;
+      text-align: left;
+    }
+    p {
+      text-align: left;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $sub-heading;
+      font-weight: 400;
+      font-family: "Poppins";
+      margin: 0;
+      padding: 0%;
+    }
+    span {
+      width: 100%;
+      font-size: 12px;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      color: #e24d31;
+      font-weight: bold;
+      text-align: left;
+    }
   }
 }

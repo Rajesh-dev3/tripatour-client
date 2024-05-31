@@ -6,12 +6,7 @@ export const allTour = createApi({
   reducerPath: "allTour",
   baseQuery: fetchBaseQuery({
     baseUrl: url,
-    prepareHeaders: (headers) => {
-      headers.set("ngrok-skip-browser-warning", "true");
-      headers.set("Accept", "application/json");
-      headers.set("Content-Type", "application/json");
-      return headers;
-    },
+
   }),
   endpoints: (builder) => ({
     allTour: builder.query({
