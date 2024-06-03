@@ -4,6 +4,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { allTour } from '../service/allTours/AllTours'
 import { feedBack } from '../service/feedBack/Feedback'
 import { addFavouriteTour } from '../service/favourite/AddFavourite'
+import { detail } from '../service/detailPage/Detail'
 
 export const store = configureStore({
   reducer: {
@@ -11,12 +12,14 @@ export const store = configureStore({
     [allTour.reducerPath]: allTour.reducer,
     [feedBack.reducerPath]: feedBack.reducer,
     [addFavouriteTour.reducerPath]: addFavouriteTour.reducer,
+    [detail.reducerPath]: detail.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(allTour.middleware)
   .concat(feedBack.middleware)
+  .concat(detail.middleware)
   .concat(addFavouriteTour.middleware)
   ,
 })

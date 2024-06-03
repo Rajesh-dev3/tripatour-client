@@ -1,91 +1,80 @@
+import React, { useEffect, useState } from 'react'
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { BorderlessSelect } from "./styled";
-import { useState } from "react";
+import { useGetFavoriteTourQuery } from '../../service/favourite/AddFavourite';
+import FavSliderComponent from "../../component/slider/FavSlider";
 import DetailTabs from "../../component/detailTabs/DetailTabs";
 import StepsTrack from "../../component/stepsTrack/StepsTrack";
 import DetailCard from "../../component/detailsPageCard/DetailCard";
 import HouseRuleContent from "../../component/houseRuleContent/HouseRuleContent";
-import SimilarPackageCard from "../../component/similarPackageCard/SimilarPackageCard"
-
-///styles
-import "./styles.scss";
-import DesertExtremeCard from "../../component/desertExtremeCard/DesertExtremeCard";
-
-import SliderComponent from "../../component/slider/Slider";
-import { useGetFavoriteTourQuery } from "../../service/favourite/AddFavourite";
-import FavSliderComponent from "../../component/slider/FavSlider";
+import { useDetailHighlightMutation } from '../../service/detailPage/Detail';
+import { useParams } from 'react-router-dom';
 const TourDetail = () => {
-  const names = [
-    "Oliver Hansen",
-    "Van Henry",
-    "April Tucker",
-    "Ralph Hubbard",
-    "Omar Alexander",
-    "Carlos Abbott",
-    "Miriam Wagner",
-    "Bradley Wilkerson",
-    "Virginia Andrews",
-    "Kelly Snyder",
-  ];
-  const [personName, setPersonName] = useState([]);
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
-  const {data:favouriteData} = useGetFavoriteTourQuery()
-  const detailList = [
-    {
-      name: "High",
-      list: [
-        "Get an affordable desert safari experience complete with an unlimited BBQ dinner with plenty of options from different cuisines including hummus, biriyani, and pasta.",
-        "Enjoy must-do experiences with your ticket including 15 minutes of dune bashing, a camel ride, and sandboarding",
-        "Deck out in traditional clothes with a falcon resting on your arm and get a beautiful henna design on your palms for the complete Emirati experience.",
-        "Spread out on an Arabic Majlis while puffing shisha and try  traditional tea, qehwah, and luqaimat – a sweet dish",
-        "Relish in your delicious dinner with a side of a thrilling belly dance performance, a fire show as well as a Tanoura dance performance",
-      ],
-    },
-    {
-      name: "Inclusions",
-      list: [
-        "6-hour desert safari",
-        "Hotel transfers in AC 4x4 cars",
-        "Dune bashing for 10-15 mins",
-        "BBQ dinner buffet with veg, non-veg and Jain dishes (find the menu here)",
-        "Live entertainment shows (Tanoura, belly dancing, and fire dancing)",
-        "Camel ride",
-        "Sunset photo stop",
-        "Traditional Arabic costume photo opportunity",
-        "Sandboarding",
-        "Arabic coffee or tea",
-        "Henna painting Unlimited refreshments: tea, coffee, water, soft drinks",
-      ],
-    },
-    {
-      name:"Need To Know",
-      list:[
-        "A buggy is available on request",
-"Facilities: Wheelchair Accessibility","Belly dance will not be available during the holy month of Ramadan."
-      ]
-    },
-    {name:"Cancellation Policy",
-      list:["These tickets can't be cancelled or rescheduled."]
+    const {data:favouriteData} = useGetFavoriteTourQuery()
+    const [personName, setPersonName] = useState([]);
+    const {id} = useParams()
+    const handleChange = (event) => {
+      const {
+        target: { value },
+      } = event;
+      setPersonName(
+        // On autofill we get a stringified value.
+        typeof value === "string" ? value.split(",") : value
+      );
+    };
+    const [trigger,{data}]=useDetailHighlightMutation()
+
+    useEffect(() => {
+      trigger({tourId:id})
+    }, [id])
+
+    const removeCol = (name) => {
+      if(name == "highlights"){
+
+        return data && data?.data[0][name][0].split('\n')?.map(item => item.trim().replace(/^"|"$/g, '').replace(/,$/, '')) || [];
+      }else{
+        return data && data?.data[0][name].split('\n')?.map(item => item.trim().replace(/^"|"$/g, '').replace(/,$/, '')) || [];
+
+      }
     }
-  ];
-
-
+  
+    
+    const detailList = [
+      {
+        name: "Highlights",
+        list:data && removeCol("highlights") || []
+      },
+      {
+        name: "Inclusions",
+        list: data && removeCol("inclusions") || [] 
+      },
+      {
+        name:"Need To Know",
+        list: data && removeCol("needToKnow") || [] 
+      },
+      {name:"Cancellation Policy",
+      list: data && removeCol("canclePolicy") || []
+      }
+    ];
+    const names = [
+      "Oliver Hansen",
+      "Van Henry",
+      "April Tucker",
+      "Ralph Hubbard",
+      "Omar Alexander",
+      "Carlos Abbott",
+      "Miriam Wagner",
+      "Bradley Wilkerson",
+      "Virginia Andrews",
+      "Kelly Snyder",
+    ];
+   
   return (
     <>
-      <div className="tour-detail-container">
-        <div className="tour-detail-left-col">
-          <div className="heading">
+           <div className="heading">
             <div className="heading-left-col">
               <h1>Morning Desert Safari with Quad Bike</h1>
               <ul>
@@ -144,7 +133,7 @@ const TourDetail = () => {
               </FormControl>
             </div>
           </div>
-          <DetailTabs />
+          <DetailTabs sliderData={data}/>
           <StepsTrack />
           <div className="highlights-section">
             {detailList.map((item)=>{
@@ -194,15 +183,8 @@ const TourDetail = () => {
                 <div className="slider-bg"></div>
               </div>
             </div>
-        </div>
-        <div className="tour-detail-right-col">
-          <h3>Similar Package</h3>
-          <SimilarPackageCard/>
-          <DesertExtremeCard/>
-        </div>
-      </div>
     </>
-  );
-};
+  )
+}
 
-export default TourDetail;
+export default TourDetail

@@ -1,0 +1,188 @@
+.listing-card-container {
+    margin-top: 10px;
+  width: calc(100% - 20px);
+  display: flex;
+  align-items: flex-start;
+  height: 200px;
+  border-radius: 5px;
+  filter: drop-shadow(0px 6px 24.5px rgba(22, 19, 22, 0.09));
+  background-color: #ffffff;
+  border: 0px solid #000000;
+  padding: 10px;
+  gap: 20px;
+  .listing-card-img-col {
+    width: 30%;
+    background-size: cover;
+    height: 100%;
+    border-radius: 5px;
+  }
+  .listing-card-desc-col {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    .listing-card-desc-top-col {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      div {
+        h4 {
+          font-size: 22px;
+          letter-spacing: -1px;
+          color: #464646;
+          font-weight: bold;
+          margin: 0%;
+          margin-top: -7px;
+          padding: 0%;
+        }
+
+        .xtreme {
+          color: #c5c5c5;
+          font-size: 10px;
+          font-weight: 100;
+          font-family: sans-serif;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-top: 5px;
+          svg {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 3px;
+            margin-left: 10px;
+            margin-right: 5px;
+          }
+        }
+        .number-rating {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          font-size: 10px;
+          color: black;
+          font-weight: 400;
+          span {
+            width: 7px;
+            height: 7px;
+            background-color: #3566bc;
+            border-radius: 5px;
+            font-size: 9px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            color: white;
+          }
+          p {
+            margin: 0%;
+            padding: 0%;
+            color: #3566bc;
+            //   font-size: 10px;
+          }
+        }
+        .review-p {
+          margin: 0%;
+          padding: 0%;
+          font-size: 10px;
+          text-transform: uppercase;
+          color: #8c8c8c;
+          width: 100%;
+          text-align: end;
+        }
+      }
+    }
+    .listing-card-desc-bottom-col {
+      position: absolute;
+      bottom: 0%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .desc-bottom-left-col {
+        ul {
+          margin: 0%;
+          padding: 0%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          li {
+            list-style: none;
+            text-align: center;
+            width: 45px;
+            .icon {
+              width: 100%;
+              height: 35px;
+              border-radius: 5px;
+              background-color: #ffffff;
+              border: 1px solid #e4e4e4;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              svg {
+                color: black;
+                font-size: 12px;
+              }
+            }
+            span {
+              margin: 0%;
+              padding: 0%;
+              font-size: 8px;
+              margin-top: 3px;
+              color: #8c8c8c;
+              display: block;
+              text-align: center;
+              line-height: 9px;
+            }
+          }
+        }
+      }
+      .desc-bottom-right-col {
+        .price {
+          color: black;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin-top: 6%;
+          .aed {
+            margin: 0%;
+            padding: 0%;
+            color: #464646;
+            font-size: 16px;
+          }
+          .per-night {
+            margin: 0%;
+            padding: 0%;
+            padding-top: 5px;
+            font-size: 12px;
+            color: #c5c5c5;
+            font-weight: 100;
+            font-family: sans-serif;
+          }
+        }
+        .book-now-btn {
+          width: 100%;
+          text-align: end;
+          margin-top: 10px;
+          button {
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 600;
+            width: 149px;
+            height: 37px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #29a482;
+          }
+        }
+      }
+    }
+    .rating {
+      width: 100%;
+      text-align: end;
+    }
+  }
+}

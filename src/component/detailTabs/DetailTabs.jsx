@@ -10,7 +10,7 @@ import { useAddFavouriteTourMutation, useGetFavoriteTourQuery } from "../../serv
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
-const DetailTabs = () => {
+const DetailTabs = ({sliderData}) => {
   const [activePreviewImg, setActivePreviewImg] = useState(topBanner)
   const [value, setValue] =useState(4);
   var settings = {
@@ -77,7 +77,6 @@ const DetailTabs = () => {
       }
   }, [id,favouriteData])
   
-
   return (
 
     <div className="tabs-container">
@@ -100,11 +99,11 @@ const DetailTabs = () => {
           </div>
           <div className="slides-list">
           <Slider {...settings}>
-            <img src={topBanner} alt="" onClick={()=>setActivePreviewImg(topBanner)}/>
-          <img src={buggy} alt="" onClick={()=>setActivePreviewImg(buggy)}/>
-            <img src={cardImage} alt="" onClick={()=>setActivePreviewImg(cardImage)}/>
-            <img src={buggy} alt="" onClick={()=>setActivePreviewImg(buggy)}/>
-            <img src={cardImage} alt="" onClick={()=>setActivePreviewImg(cardImage)}/>
+              
+         
+            {sliderData?.data?.[0]?.images?.map((item) => (
+              <img src={item} alt={item} onClick={() => setActivePreviewImg(item)} key={item} />
+            ))}
     </Slider>
          
           </div>

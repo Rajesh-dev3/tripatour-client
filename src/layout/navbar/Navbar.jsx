@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 ////styles
 import "./styles.scss";
+import { Link } from "react-router-dom";
 export const navList = [
   {
     name: "home",
@@ -57,12 +58,14 @@ const Navbar = ({ fun }) => {
 
   return (
     <div className={`nav-container ${scrolled ? "scrolled" : ""}`}>
+      <Link to={"/"}> 
       <div className="logo">
         <div className="ham-icon" onClick={() => fun(true)}>
           <IoIosMenu />
         </div>
         <img src={logo} />
       </div>
+      </Link>
       <div className="nav-list">
         <ul>
           {navList?.map((item, index) => {

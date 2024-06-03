@@ -1,0 +1,53 @@
+.bred-crum {
+  width: 100%;
+  margin-top: 5%;
+  ul {
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    li {
+      list-style: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: rgb(193 193 193);
+      svg {
+        font-size: 15px;
+        margin-top: 5px;
+        color: black;
+      }
+      &:nth-child(1) {
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.listing-container {
+  width: 100%;
+
+
+    .listing-heading {
+    width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h4{
+        font-size: 26px;
+        text-transform: uppercase;
+        color: #4d545a;
+        margin-block: 20px;
+      }
+    }
+    .pagination{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}
