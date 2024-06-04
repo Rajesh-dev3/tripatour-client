@@ -1,8 +1,10 @@
+import RoomIcon from '@mui/icons-material/Room';
 
 const StepCol = ({data,length,index}) => {
-  const isLastIndex = index === length - 1;
-  const isSecondLastIndex = index === length - 2;
-  const hasArrived = data?.arrive;
+  const isLastIndex = index === length ;
+  console.log(length)
+  const isSecondLastIndex = index === length - 1;
+  const hasArrived = index == 0;
   const circleCoverClass = isLastIndex
   ? "bg-white"
   : hasArrived
@@ -29,12 +31,12 @@ const StepCol = ({data,length,index}) => {
       }
    
   <div className={`step-circle-cover ${circleCoverClass}`}>
-    <div className="step-circle">{data?.icon}</div>
+    <div className="step-circle"><RoomIcon/></div>
   </div>
   <div className="step-col-desc">
     <ul>
-      <li className="step-col-desc-list-heading">{data?.heading}</li>
-      <li className="step-col-desc-list">{data?.para}</li>
+      <li className="step-col-desc-list-heading">{data?.name}</li>
+      <li className="step-col-desc-list">{data?.description}</li>
     </ul>
   </div>
 </div>

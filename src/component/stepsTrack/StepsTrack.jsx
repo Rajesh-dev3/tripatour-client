@@ -8,6 +8,8 @@ import "./styles.scss";
 import RoomIcon from '@mui/icons-material/Room';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import { useExperienceQuery } from "../../service/experience/Experience";
+import { useParams } from "react-router-dom";
 const StepsTrack = () => {
   const stepOb = [
     {
@@ -41,6 +43,8 @@ const StepsTrack = () => {
       // icon:<RoomIcon/>
     }
   ]
+  const {id}= useParams()
+  const {data} = useExperienceQuery(id)
   return (
     <div className="step-container">
       <div className="step-left-col">
@@ -48,7 +52,7 @@ const StepsTrack = () => {
         <p>Itinerary</p>
       </div>
       <div className="step-right-col">
-        {stepOb.map((item,index)=>{
+        {data && data?.data[0].steps?.map((item,index)=>{
           return(
 
             <StepCol key={item.heading+index} data={item} length={stepOb.length} index={index}/>
