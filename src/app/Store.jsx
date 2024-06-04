@@ -6,6 +6,7 @@ import { feedBack } from '../service/feedBack/Feedback'
 import { addFavouriteTour } from '../service/favourite/AddFavourite'
 import { detail } from '../service/detailPage/Detail'
 import { experience } from '../service/experience/Experience'
+import { houseRule } from '../service/houseRule/HouseRule'
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     [addFavouriteTour.reducerPath]: addFavouriteTour.reducer,
     [detail.reducerPath]: detail.reducer,
     [experience.reducerPath]: experience.reducer,
+    [houseRule.reducerPath]: houseRule.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -23,6 +25,7 @@ export const store = configureStore({
   .concat(feedBack.middleware)
   .concat(detail.middleware)
   .concat(experience.middleware)
+  .concat(houseRule.middleware)
   .concat(addFavouriteTour.middleware)
   ,
 })

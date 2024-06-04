@@ -11,38 +11,38 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { useExperienceQuery } from "../../service/experience/Experience";
 import { useParams } from "react-router-dom";
 const StepsTrack = () => {
-  const stepOb = [
-    {
-      heading:"Pickup Location",
-      para:"Delhi",
-      arrive:true,
-      icon:<RoomIcon/>
-    },
-    {
-      heading:"Lohbab Desert",
-      para:"Photo stop, Sandboarding, Dune bashing, Camel ride (45 minutes)",
-      arrive:false,
-      icon:<RoomIcon/>
-    },
-    {
-      heading:"Ai Aweer",
-      para:"Coffee, Tea, Dinner, Camp activities, BBQ, Local snacks, Traditional dance show, Welcome refreshments (2.5 hours)",
-      arrive:false,
-      icon:<LocalDiningIcon/>
-    },
-    {
-      heading:"Jeep/Suv",
-      para:"(45 Minutes)",
-      arrive:false,
-      icon:<DirectionsCarIcon/>
-    },
-    {
-      heading:"Arrive back at:",
-      para:"Dubai",
-      arrive:false,
-      // icon:<RoomIcon/>
-    }
-  ]
+  // const stepOb = [
+  //   {
+  //     heading:"Pickup Location",
+  //     para:"Delhi",
+  //     arrive:true,
+  //     icon:<RoomIcon/>
+  //   },
+  //   {
+  //     heading:"Lohbab Desert",
+  //     para:"Photo stop, Sandboarding, Dune bashing, Camel ride (45 minutes)",
+  //     arrive:false,
+  //     icon:<RoomIcon/>
+  //   },
+  //   {
+  //     heading:"Ai Aweer",
+  //     para:"Coffee, Tea, Dinner, Camp activities, BBQ, Local snacks, Traditional dance show, Welcome refreshments (2.5 hours)",
+  //     arrive:false,
+  //     icon:<LocalDiningIcon/>
+  //   },
+  //   {
+  //     heading:"Jeep/Suv",
+  //     para:"(45 Minutes)",
+  //     arrive:false,
+  //     icon:<DirectionsCarIcon/>
+  //   },
+  //   {
+  //     heading:"Arrive back at:",
+  //     para:"Dubai",
+  //     arrive:false,
+  //     // icon:<RoomIcon/>
+  //   }
+  // ]
   const {id}= useParams()
   const {data} = useExperienceQuery(id)
   return (

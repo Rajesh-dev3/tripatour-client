@@ -12,6 +12,7 @@ import DetailCard from "../../component/detailsPageCard/DetailCard";
 import HouseRuleContent from "../../component/houseRuleContent/HouseRuleContent";
 import { useDetailHighlightMutation } from '../../service/detailPage/Detail';
 import { useParams } from 'react-router-dom';
+import { useHouseRuleQuery } from '../../service/houseRule/HouseRule';
 const TourDetail = () => {
     const {data:favouriteData} = useGetFavoriteTourQuery()
     const [personName, setPersonName] = useState([]);
@@ -71,7 +72,8 @@ const TourDetail = () => {
       "Virginia Andrews",
       "Kelly Snyder",
     ];
-   
+  const {data:houseRule} = useHouseRuleQuery(id)
+  const houseRuleData = houseRule && houseRule?.data[0]
   return (
     <>
            <div className="heading">
@@ -158,10 +160,10 @@ const TourDetail = () => {
           <div className="house-rules">
             <div className="heading-house-rule">
               <h4>House Rules </h4>
-              <p>Wyndham Dubai Marina takes special requests-add in the next steps!</p>
+              <p>{houseRuleData?.description}</p>
             </div>
             <div className="house-rule-content">
-             <HouseRuleContent/>
+             <HouseRuleContent houseRuleData={houseRuleData}/>
              
 
             </div>
