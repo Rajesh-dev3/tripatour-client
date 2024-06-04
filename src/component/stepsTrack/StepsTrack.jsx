@@ -55,7 +55,7 @@ const StepsTrack = () => {
         {data && data?.data[0].steps?.map((item,index)=>{
           return(
 
-            <StepCol key={item.heading+index} data={item} length={stepOb.length} index={index}/>
+            <StepCol key={item.heading+index} data={item} length={data?.data[0].steps?.length} index={index}/>
           )
         })}
       </div>

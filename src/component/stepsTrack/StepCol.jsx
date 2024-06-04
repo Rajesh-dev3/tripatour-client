@@ -1,9 +1,7 @@
 import RoomIcon from '@mui/icons-material/Room';
-
 const StepCol = ({data,length,index}) => {
-  const isLastIndex = index === length ;
-  console.log(length)
-  const isSecondLastIndex = index === length - 1;
+  const isLastIndex = index === length - 1;
+  const isSecondLastIndex = index === length - 2;
   const hasArrived = index == 0;
   const circleCoverClass = isLastIndex
   ? "bg-white"
