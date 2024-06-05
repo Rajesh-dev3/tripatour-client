@@ -7,11 +7,15 @@
   background-size: 100% 100%;
   position: relative;
   margin-top: 5%;
+
    @include media(phone){
     background-image: url("../../assets/images/Mobile-Footer.jpg");
     height: 400px;
     // backdrop-filter: blur(10px);
   }
+  @include media(largeHug){
+   height: 100vh;
+    }
   .footer-form {
     position: absolute;
     top: 40%;
@@ -25,6 +29,9 @@
       left: 0%;
       top: 0px;
     }
+    // @include media(largeHug){
+    //  max-width: 400px;
+    //    }
     .form-heading {
       width: 100%;
       text-align: center;

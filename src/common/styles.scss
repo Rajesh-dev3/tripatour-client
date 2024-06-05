@@ -4,10 +4,12 @@
 .layout-center-col {
     width: 90%;
     margin: auto;
+    max-width: 1207px;
     @include media(phone){
       width: 95%;
     }
 }
 .mobile-layout-center-col{
     width: 100%;
+    // max-width: 1207px;
 }

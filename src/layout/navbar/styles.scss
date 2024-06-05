@@ -1,22 +1,30 @@
 @import "../../styles/variables/colors";
 @import "../../styles/variables/mixins";
 .nav-container {
-  width: calc(100% - 40px);
+  width: calc(100% - 80px);
   background-color: transparent;
   position: fixed;
   top: 0%;
   left: 0%;
-  padding-inline: 20px;
+  padding-inline: 40px;
   z-index: 1;
   display: flex;
   padding-block: 10px;
   align-items: center;
   justify-content: space-between;
-   @include media(phone){
-    padding-inline: 10px;
-    padding-block: 0px;
-    width: calc(100% - 20px);
+  padding-top: 20px;
+
+   @include media(largeHug){
+    width: calc(100% - 160px);
+    padding-inline: 80px;
+    padding-top: 50px;
+  
   }
+  //  @include media(phone){
+  //   padding-inline: 10px;
+  //   padding-block: 0px;
+  //   width: calc(100% - 20px);
+  // }
   .logo {
     display: flex;
     align-items: center;
@@ -46,6 +54,10 @@
       margin: 0%;
       gap: 20px;
       padding: 0%;
+      @include media(largeHug){
+     gap: 50px;
+      
+      }
       li {
         padding-bottom: 5px;
         list-style: none;
