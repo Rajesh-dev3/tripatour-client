@@ -6,11 +6,13 @@ import { Provider } from "react-redux";
 import {store }from "./app/Store"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useMediaQuery } from "./useMediaQuery/UseMediaQuery";
 
 function App() {
+  const isMobille = useMediaQuery("(max-width:480px)")
   return (
     <Provider store = {store}>
-      <RouterProvider router={router} />
+      <RouterProvider router={router(isMobille)} />
       <ToastContainer /> 
     </Provider>
   );

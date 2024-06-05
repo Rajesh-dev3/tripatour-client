@@ -119,170 +119,164 @@
   }
 }
 
-.layout-center-col {
-  width: 90%;
-  margin: auto;
+
+.about-section {
+  width: 100%;
+  display: flex;
+  margin-top: 5%;
+  height: 450px;
+  overflow: hidden;
+  gap: 40px;
   @include media(phone){
-    width: 95%;
+    flex-direction: column;
+    height: auto;
   }
-  .about-section {
-    width: 100%;
-    display: flex;
-    margin-top: 5%;
-    height: 450px;
-    overflow: hidden;
-    gap: 40px;
+  .about-left-col {
+    width: 50%;
+    height: 100%;
     @include media(phone){
-      flex-direction: column;
-      height: auto;
+      width: 100%;
     }
-    .about-left-col {
-      width: 50%;
+    img {
+      width: 100%;
       height: 100%;
-      @include media(phone){
-        width: 100%;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .about-right-col {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      position: relative;
-      @include media(phone){
-        width: 100%;
-      }
-      .about-car-img-div {
-        position: absolute;
-        right: 0%;
-        top: 0%;
-        @include media(phone){
-          width: 50%;
-
-        }
-        img{
-          @include media(phone){
-            width: 100%;
-  
-          }
-        }
-      }
-      .about {
-        font-size: 15px;
-        letter-spacing: 0px;
-        line-height: 22px;
-        color: #0c1620;
-        font-weight: bold;
-       
-        margin: 0%;
-        padding: 0%;
-      }
-      h3 {
-        margin: 0%;
-        padding: 0%;
-        font-size: 26px;
-        letter-spacing: -1px;
-        color: #0c1620;
-        font-weight: bold;
-        
-        span {
-          width: 125px;
-          height: 32px;
-          border-radius: 6px;
-          background-color: $light-orange;
-          color: $white;
-          padding-inline: 5px;
-        }
-      }
-      p {
-        font-size: 13px;
-        letter-spacing: 0px;
-        line-height: 16px;
-        color: #0c1620;
-        font-family: "Arial";
-      }
     }
   }
+  .about-right-col {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    @include media(phone){
+      width: 100%;
+    }
+    .about-car-img-div {
+      position: absolute;
+      right: 0%;
+      top: 0%;
+      @include media(phone){
+        width: 50%;
 
-  .slider-section {
-    width: 100%;
-    margin: 5% auto auto auto;
-    .slider-heading {
-      text-transform: uppercase;
-      font-size: 29px;
-      letter-spacing: -1px;
-      line-height: 37px;
-      text-transform: uppercase;
-      color: $heading;
+      }
+      img{
+        @include media(phone){
+          width: 100%;
+
+        }
+      }
+    }
+    .about {
+      font-size: 15px;
+      letter-spacing: 0px;
+      line-height: 22px;
+      color: #0c1620;
       font-weight: bold;
      
-      text-align: center;
-      @include media(phone){
-        font-size: 22px;
-
+      margin: 0%;
+      padding: 0%;
+    }
+    h3 {
+      margin: 0%;
+      padding: 0%;
+      font-size: 26px;
+      letter-spacing: -1px;
+      color: #0c1620;
+      font-weight: bold;
+      
+      span {
+        width: 125px;
+        height: 32px;
+        border-radius: 6px;
+        background-color: $light-orange;
+        color: $white;
+        padding-inline: 5px;
       }
-      .para {
-        margin: 0%;
-        opacity: 0.741;
-        font-size: 18px;
-        letter-spacing: 0px;
-        line-height: 26px;
-        text-transform: uppercase;
-        color: #585858;
-        font-weight: bold;
-        @include media(phone){
-          font-size: 16px;
-  
-        }
-      }
+    }
+    p {
+      font-size: 13px;
+      letter-spacing: 0px;
+      line-height: 16px;
+      color: #0c1620;
+      font-family: "Arial";
     }
   }
-  .why-us-section {
-    width: 100%;
-    margin-top: 5%;
-  
-    .why-us-heading {
-      width: 100%;
-      font-size: 29px;
-      letter-spacing: -1px;
-      line-height: 37px;
-      text-transform: uppercase;
-      color: $heading;
-      font-weight: bold;
-    
-      text-align: center;
+}
+
+.slider-section {
+  width: 100%;
+  margin: 5% auto auto auto;
+  .slider-heading {
+    text-transform: uppercase;
+    font-size: 29px;
+    letter-spacing: -1px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $heading;
+    font-weight: bold;
+   
+    text-align: center;
+    @include media(phone){
+      font-size: 22px;
+
     }
-    .why-us-sub-heading {
-      width: 100%;
+    .para {
+      margin: 0%;
       opacity: 0.741;
       font-size: 18px;
       letter-spacing: 0px;
       line-height: 26px;
       text-transform: uppercase;
-      color: $sub-heading;
+      color: #585858;
       font-weight: bold;
-     
-      text-align: center;
+      @include media(phone){
+        font-size: 16px;
+
+      }
     }
-    .why-us-content{
-        border: 1px solid #f8f0ea;
-        display: grid;
-        width: calc(100% - 40px);
-        padding: 20px;
-        border-radius: 5px;
-        margin-top: 20px;
-        grid-template-columns: repeat(4,1fr);
-        @include media(phone){
-          grid-template-columns: repeat(1,1fr);
-        }
-    }
-    
   }
+}
+.why-us-section {
+  width: 100%;
+  margin-top: 5%;
+
+  .why-us-heading {
+    width: 100%;
+    font-size: 29px;
+    letter-spacing: -1px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $heading;
+    font-weight: bold;
+  
+    text-align: center;
+  }
+  .why-us-sub-heading {
+    width: 100%;
+    opacity: 0.741;
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: $sub-heading;
+    font-weight: bold;
+   
+    text-align: center;
+  }
+  .why-us-content{
+      border: 1px solid #f8f0ea;
+      display: grid;
+      width: calc(100% - 40px);
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      grid-template-columns: repeat(4,1fr);
+      @include media(phone){
+        grid-template-columns: repeat(1,1fr);
+      }
+  }
+  
 }
 
 .slider-col {

@@ -1,0 +1,13 @@
+@import "../styles/variables/colors";
+@import "../styles/variables/mixins";
+
+.layout-center-col {
+    width: 90%;
+    margin: auto;
+    @include media(phone){
+      width: 95%;
+    }
+}
+.mobile-layout-center-col{
+    width: 100%;
+}

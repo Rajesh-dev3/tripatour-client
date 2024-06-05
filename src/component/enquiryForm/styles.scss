@@ -1,0 +1,88 @@
+.enquiry-form-container{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    height: auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form-center-col{
+        width:calc(90% - 40px);
+border-radius: 5px;
+margin-block: 30px;
+filter: drop-shadow(0px 6px 24.5px rgba(22,19,22,0.09));
+background-color: #ffffff;
+border: 0px solid #000000;
+padding: 20px;
+h2{
+    font-size: 28px;
+    letter-spacing: 0px;
+    line-height: 32px;
+    color: #4a4a4a;
+    margin: 0%;
+}
+p{
+    font-size: 13px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    color: #4a4a4a;
+}
+form{
+    width: 100%;
+    .form-col{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        .input-col{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label{
+                font-size: 14px;
+                color: #4a4a4a;
+               
+margin-block: 10px;
+            }
+            input{
+height: 40px;
+padding-inline: 10px;
+border-radius: 5px;
+width: calc(100% - 20px);
+background-color: #f6f6f6;
+border: 1px solid #e4e4e4;
+            }
+         
+        }
+        textarea{
+            border-radius: 5px;
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            background-color: #f6f6f6;
+border: 1px solid #e4e4e4;
+        }
+    }
+    button{
+        margin-top: 20px;
+        font-size: 16px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: #ffffff;
+font-weight: 600;
+font-family: "Poppins";
+text-align: center;
+width: 193px;
+height: 49px;
+border-radius: 5px;
+border: none;
+outline: none;
+background-color: #29a482;
+    }
+}
+    }
+}

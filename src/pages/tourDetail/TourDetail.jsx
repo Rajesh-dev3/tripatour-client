@@ -11,9 +11,11 @@ import StepsTrack from "../../component/stepsTrack/StepsTrack";
 import DetailCard from "../../component/detailsPageCard/DetailCard";
 import HouseRuleContent from "../../component/houseRuleContent/HouseRuleContent";
 import { useDetailHighlightMutation } from '../../service/detailPage/Detail';
-import { useParams } from 'react-router-dom';
+import { useOutletContext, useParams } from 'react-router-dom';
 import { useHouseRuleQuery } from '../../service/houseRule/HouseRule';
+
 const TourDetail = () => {
+
     const {data:favouriteData} = useGetFavoriteTourQuery()
     const [personName, setPersonName] = useState([]);
     const {id} = useParams()
@@ -74,8 +76,10 @@ const TourDetail = () => {
     ];
   const {data:houseRule} = useHouseRuleQuery(id)
   const houseRuleData = houseRule && houseRule?.data[0]
+  const [fun] = useOutletContext();
   return (
     <>
+   
            <div className="heading">
             <div className="heading-left-col">
               <h1>Morning Desert Safari with Quad Bike</h1>
@@ -135,13 +139,13 @@ const TourDetail = () => {
               </FormControl>
             </div>
           </div>
-          <DetailTabs sliderData={data}/>
+          <DetailTabs sliderData={data} fun={fun}/>
           <StepsTrack />
           <div className="highlights-section">
             {detailList.map((item)=>{
               return(
 
-                <DetailCard name={item?.name}  list={item?.list} key={item?.name}/>
+                <DetailCard name={item?.name}  list={item?.list} key={item?.name} />
               )
             })}
            

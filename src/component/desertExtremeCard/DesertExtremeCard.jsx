@@ -2,7 +2,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 ////styles
 import "./styles.scss"
 import { desertExtreme } from '../../assets/images';
-const DesertExtremeCard = () => {
+const DesertExtremeCard = ({fun}) => {
   return (
     <div className='desert-extreme-card-col'>
         <div className="heading-extreme-card">
@@ -38,7 +38,7 @@ const DesertExtremeCard = () => {
                     </span>There are more repeat guests here than most other properties</li>
             </ul>
             <div className="reserve-btn">
-                <button>Reserve</button>
+                <button onClick={()=>fun()}>Reserve</button>
             </div>
         </div>
     </div>

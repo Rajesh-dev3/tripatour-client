@@ -4,4 +4,5 @@ import buggy from "./Buggy-Tour.png"
 import cardImage from "./cardImage.jpg"
 import topBanner from "./Home-Top-Banner.jpg"
 import desertExtreme from "./desert-xtreme-logo.png"
-export {logo,about,buggy,cardImage,topBanner,desertExtreme}
+import mobileLogo from "./mobile-logo.png"
+export {logo,about,buggy,cardImage,topBanner,desertExtreme,mobileLogo}

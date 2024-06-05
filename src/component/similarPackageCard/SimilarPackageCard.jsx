@@ -6,7 +6,7 @@ import "./styles.scss";
 import { useAddFavouriteTourMutation } from "../../service/favourite/AddFavourite";
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
-const SimilarPackageCard = () => {
+const SimilarPackageCard = ({fun}) => {
   const [trigger,{data}]=useAddFavouriteTourMutation()
   const {id} =useParams()
   const addFavouriteTour = ()=>{
@@ -37,7 +37,7 @@ const SimilarPackageCard = () => {
         </div>
       </div>
         <div className="similar-card-book-btn">
-          <button>BOOK NOW</button>
+          <button onClick={()=>fun()}>BOOK NOW</button>
         </div>
     </div>
   );

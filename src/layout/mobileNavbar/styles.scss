@@ -1,0 +1,42 @@
+.mobile-navbar-container {
+  width:calc(100vw - 10%);
+  height: 64px;
+  filter: drop-shadow(0px 1px 3.5px rgba(101, 101, 101, 0.26));
+  background-color: #ffffff;
+  border: 0px solid #0b0e11;
+  position: sticky;
+  top: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 5%;
+  .mbile-nav-left-col{
+    width: 60%;
+    img{
+      width: 50%;
+    }
+  }
+  .mbile-nav-right-col{
+    width:40%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    .welcome-heading{
+      font-size: 12px;
+letter-spacing: 0px;
+color: #494949;
+text-align: right;
+      p{
+        margin: 0%;
+      }
+    }
+    .bell-icon{
+      color: red;
+      margin-left: 5px;
+      svg{
+        font-size: 24px;
+
+      }
+    }
+  }
+}

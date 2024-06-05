@@ -10,7 +10,7 @@ import { useAddFavouriteTourMutation, useGetFavoriteTourQuery } from "../../serv
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
-const DetailTabs = ({sliderData}) => {
+const DetailTabs = ({sliderData,fun}) => {
   const [activePreviewImg, setActivePreviewImg] = useState(topBanner)
   const [value, setValue] =useState(4);
   var settings = {
@@ -137,7 +137,7 @@ const DetailTabs = ({sliderData}) => {
   Desert Xtreme <StarIcon/> 4.5
 </div>
 <div className="book-btn">
-  <button>BOOK NOW</button>
+  <button onClick={()=>fun()}>BOOK NOW</button>
 </div>
 <div className="pickup-drop-time">
   <ul>
