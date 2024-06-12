@@ -9,14 +9,14 @@ const SliderCard = ({ data }) => {
   }
   return (
     <div className="slider-card" onClick={()=>navHandler(data?._id)}>
-      <div className="top-col" style={{ backgroundImage: `url(${cardImage})` }}>
+      <div className="top-col" style={{ backgroundImage: `url(${data?.images})` }}>
         {/* <img src={cardImage}/> */}
         {/* <img src={data?.image}/> */}
       </div>
       <div className="bottom-col">
-        <h4 className="card-heading">{data?.description}</h4>
-        <p>{data?.timing} · Kymco/Grizzly 350CC</p>
-        <span>{data?.price}</span>
+        <h4 className="card-heading">{data?.name}</h4>
+        <p>{data?.description}</p>
+        <span>{data?.price} Aed</span>
       </div>
     </div>
   );

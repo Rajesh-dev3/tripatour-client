@@ -96,6 +96,8 @@
 }
 
 .scrolled {
+  padding-top: 1% !important;
+  filter: drop-shadow(0px 6px 24.5px rgba(22,19,22,0.09));
   .active-nav {
     border-bottom: 1px solid $black;
     transition: all 0.9s ease-out;

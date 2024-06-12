@@ -9,8 +9,10 @@ import { useGetFavoriteTourQuery } from '../../service/favourite/AddFavourite';
 import Pagination from '@mui/material/Pagination';
 ///styles
 import "./styles.scss"
+import { useAllPackagesQuery } from '../../service/allPackages/AllPackages';
 const Listing = () => {
     const [personName, setPersonName] = useState([]);
+    const {data} = useAllPackagesQuery()
     const names = [
         "25",
         "50",
@@ -70,11 +72,10 @@ const Listing = () => {
                 </BorderlessSelect>
               </FormControl>
                 </div>
-                <ListingCard/>
-                <ListingCard/>
-                <ListingCard/>
-                <ListingCard/>
-                <ListingCard/>
+                {data?.data.map((item,index)=>{
+                  return <ListingCard data={item} key={index}/>
+                })}
+               
                 <div className="slider-section" >
               <div className="slider-heading">
               Travellers' favorite choice

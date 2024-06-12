@@ -6,11 +6,11 @@ import { notify } from "../toast/Toast";
 const EnquiryForm = ({setOpen,id}) => {
 
   const [formdat, setFormdat] = useState({
-    tourId:id,
-    first_name:"",
-    last_name:"",
+    packageId:id,
+    fullName:"",
     email:"",
     phone_number:"",
+    peopleInfo:"",
     message:""
 })
 const formhandler = (e)=>{
@@ -47,24 +47,26 @@ useEffect(() => {
         <form>
           <div className="form-col">
             <div className="input-col">
-              <label htmlFor="">First Name</label>
-              <input type="text" onChange={formhandler} name="first_name"/>
+              <label htmlFor="">Full Name</label>
+              <input type="text" onChange={formhandler} name="fullName"/>
             </div>
-            <div className="input-col">
-              <label htmlFor="">Last Name</label>
-              <input type="text" onChange={formhandler} name="last_name"/>
-            </div>
-          </div>
-          <div className="form-col">
             <div className="input-col">
               <label htmlFor="">Email Adress</label>
               <input type="text" onChange={formhandler} name="email"/>
             </div>
+          </div>
+          <div className="form-col">
+          
             <div className="input-col">
               <label htmlFor="">Phone Number</label>
               <input type="text" placeholder="+91" onChange={formhandler} name="phone_number"/>
             </div>
+            <div className="input-col">
+              <label htmlFor="">No of Packs</label>
+              <input type="text" onChange={formhandler} name="peopleInfo"/>
+            </div>
           </div>
+         
           <div className="form-col" >
             <div className="input-col">
             <label htmlFor="">Message</label>

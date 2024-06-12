@@ -11,7 +11,7 @@ export const allTour = createApi({
   endpoints: (builder) => ({
     allTour: builder.query({
       query: () => ({
-        url: "/tour/allTour",
+        url: "/package/client/packages",
         method: "GET",
       }),
     }),

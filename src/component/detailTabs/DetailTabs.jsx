@@ -11,7 +11,7 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
 const DetailTabs = ({sliderData,fun}) => {
-  const [activePreviewImg, setActivePreviewImg] = useState(topBanner)
+  const [activePreviewImg, setActivePreviewImg] = useState("")
   const [value, setValue] =useState(4);
   var settings = {
     dots: false,
@@ -94,14 +94,14 @@ const DetailTabs = ({sliderData,fun}) => {
       <div className="tabs-content">
         <div className="slides">
           <div className="preview-slide">
-            <img src={activePreviewImg} alt="" />
+            <img src={activePreviewImg || sliderData?.data?.images} alt="" />
             <div className={` ${checkFavourite ?"heart-icon2":"heart-icon"}`} onClick={()=>addFavouriteTour()}>{!checkFavourite ?<FavoriteBorderOutlinedIcon/>:<FavoriteOutlinedIcon /> }</div>
           </div>
           <div className="slides-list">
           <Slider {...settings}>
               
          
-            {sliderData?.data?.[0]?.images?.map((item) => (
+            {sliderData?.data?.galleryPhoto?.map((item) => (
               <img src={item} alt={item} onClick={() => setActivePreviewImg(item)} key={item} />
             ))}
     </Slider>
@@ -112,13 +112,13 @@ const DetailTabs = ({sliderData,fun}) => {
         <Rating
         size="small"
   name="simple-controlled"
-  value={value}
+  value={sliderData?.data?.star}
   onChange={(event, newValue) => {
     setValue(newValue);
   }}
 />
 <div className="number-rating">
-  <span>3.9</span> <p>
+  <span>{sliderData?.data?.star}</span> <p>
     Very Good
     </p>
      (44 VERIFIED RATINGS)
@@ -132,9 +132,9 @@ const DetailTabs = ({sliderData,fun}) => {
 <div className="price-booking">
 
   <div className="price"><h4>
-  AED 250</h4> <p>(Per Night | Per Person)</p></div>
+  AED {sliderData?.data?.price}</h4> <p>(Per Night | Per Person)</p></div>
 <div className="xtreme">
-  Desert Xtreme <StarIcon/> 4.5
+  Desert Xtreme <StarIcon/> {sliderData?.data?.star}
 </div>
 <div className="book-btn">
   <button onClick={()=>fun()}>BOOK NOW</button>
@@ -146,7 +146,8 @@ const DetailTabs = ({sliderData,fun}) => {
   </ul>
 </div>
 <div className="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.144956154799!2d77.06290787408719!3d28.47518089121143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d191ba7c41615%3A0xd9e66f6b36de988e!2sIFFCO%20Chowk%20Flyover%2C%20Harjan%20Basti%2C%20Sector%2017%2C%20Gurugram%2C%20Haryana%20122022!5e0!3m2!1sen!2sin!4v1716978634577!5m2!1sen!2sin"  style={{border:"0px"}}  loading="lazy" ></iframe>
+<iframe src= {sliderData?.data?.map}
+ style={{border:"0px"}}  loading="lazy" ></iframe>
 </div>
 </div>
         </div>

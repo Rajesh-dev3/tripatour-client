@@ -18,6 +18,7 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: false,
+    
     responsive: [
       {
         breakpoint: 1024,
@@ -76,16 +77,16 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {data?.tours?.map((item) => {
+        {data?.data?.map((item) => {
           return (
             <div className="slider-section" key={item.heading}>
               <div className="slider-heading">
-                {item?.category?.name}
+                {item?.categoryName}
                 <p className="para">{item?.category?.description}</p>
               </div>
               <div className="slider-col">
                 <div className="slider-container">
-                  <SliderComponent data={item?.tours} />
+                  <SliderComponent data={item?.packages} />
                 </div>
                 <div className="slider-bg"></div>
               </div>
@@ -113,6 +114,7 @@ const Home = () => {
             <GalleryCard />
             <GalleryCard />
             <GalleryCard />
+           
           </Slider>
         </div>
     

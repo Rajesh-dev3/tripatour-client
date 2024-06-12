@@ -5,6 +5,7 @@ import TourDetail from "../pages/tourDetail/TourDetail"
 import Listing from "../pages/listing/Listing";
 import TourDetailLayout from "../pages/tourDetail/TourDetailLayout";
 import MobileHome from "../pages/home/MobileHome";
+import MobileDetailPage from "../pages/tourDetail/MobileDetailPage";
 
 export const router=(isMobille) =>{
   return createBrowserRouter([
@@ -14,7 +15,7 @@ export const router=(isMobille) =>{
       children: [
         {
           path: "/",
-          element:isMobille ? <MobileHome/>: <Home />,
+          element: <Home />,
         },
         {
           path:"/",
@@ -29,8 +30,35 @@ export const router=(isMobille) =>{
               element: <Listing />,
             
           }]
+        },
+        {
+          path:"*", 
+          element:"<NotFound />"
         }
       
+      ],
+    },
+  ]);
+} 
+export const mobileRouter=(isMobille) =>{
+  return createBrowserRouter([
+    {
+      path: "/",
+      element: <Mainlayout />,
+      children: [
+        {
+          path: "/",
+          element:<MobileHome/>,
+        },{
+          path:"/tour-detail",
+          element:<MobileDetailPage/>
+        }
+      
+        ,
+        {
+          path:"*", 
+          element:"<NotFound />"
+        }
       ],
     },
   ]);

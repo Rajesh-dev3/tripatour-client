@@ -1,4 +1,4 @@
-import { logo } from "../../assets/images/index";
+import { logo, mobileLogo } from "../../assets/images/index";
 import { ImWhatsapp } from "react-icons/im";
 import { IoIosMenu } from "react-icons/io";
 
@@ -57,13 +57,13 @@ const Navbar = ({ fun }) => {
   };
 
   return (
-    <div className={`nav-container ${scrolled ? "scrolled" : ""}`}>
+    <div className={`nav-container ${scrolled ? "scrolled" : ""}`} >
       <Link to={"/"}> 
       <div className="logo">
         <div className="ham-icon" onClick={() => fun(true)}>
           <IoIosMenu />
         </div>
-        <img src={logo} />
+        <img src={scrolled ?mobileLogo: logo} />
       </div>
       </Link>
       <div className="nav-list">

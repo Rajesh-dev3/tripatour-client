@@ -10,7 +10,7 @@ import DetailTabs from "../../component/detailTabs/DetailTabs";
 import StepsTrack from "../../component/stepsTrack/StepsTrack";
 import DetailCard from "../../component/detailsPageCard/DetailCard";
 import HouseRuleContent from "../../component/houseRuleContent/HouseRuleContent";
-import { useDetailHighlightMutation } from '../../service/detailPage/Detail';
+import {  useDetailHighlightQuery } from '../../service/detailPage/Detail';
 import { useOutletContext, useParams } from 'react-router-dom';
 import { useHouseRuleQuery } from '../../service/houseRule/HouseRule';
 
@@ -28,38 +28,36 @@ const TourDetail = () => {
         typeof value === "string" ? value.split(",") : value
       );
     };
-    const [trigger,{data}]=useDetailHighlightMutation()
+    const {data}=useDetailHighlightQuery(id)
 
-    useEffect(() => {
-      trigger({tourId:id})
-    }, [id])
+ 
 
+    console.log(data?.data)
     const removeCol = (name) => {
       if(name == "highlights"){
 
-        return data && data?.data[0][name][0].split('\n')?.map(item => item.trim().replace(/^"|"$/g, '').replace(/,$/, '')) || [];
+        return data && data?.data[0][name][0]
       }else{
-        return data && data?.data[0][name].split('\n')?.map(item => item.trim().replace(/^"|"$/g, '').replace(/,$/, '')) || [];
+        return data && data?.data[0][name]
 
       }
     }
-  
     
     const detailList = [
       {
         name: "Highlights",
-        list:data && removeCol("highlights") || []
+        list:data?.data?.highlights
       },
       {
         name: "Inclusions",
-        list: data && removeCol("inclusions") || [] 
+        list: data?.data?.inclusions || []
       },
       {
         name:"Need To Know",
-        list: data && removeCol("needToKnow") || [] 
+        list: data?.data?.needToKnow || []
       },
       {name:"Cancellation Policy",
-      list: data && removeCol("canclePolicy") || []
+      list:data?.data?.canclePolicy || []
       }
     ];
     const names = [
@@ -77,37 +75,26 @@ const TourDetail = () => {
   const {data:houseRule} = useHouseRuleQuery(id)
   const houseRuleData = houseRule && houseRule?.data[0]
   const [fun] = useOutletContext();
+  const splitInfo  =data?.data?.info[0]?.split(",") 
   return (
     <>
    
            <div className="heading">
             <div className="heading-left-col">
-              <h1>Morning Desert Safari with Quad Bike</h1>
+              <h1>{data?.data?.name}</h1>
               <ul>
-                <li>
+                {splitInfo?.map((item)=>{
+                  return(
+
+                <li key={item}>
                   <p>
                     <AccessTimeIcon />
                   </p>
-                  6Hr.
+                  {item}
                 </li>
-                <li>
-                  <p>
-                    <AccessTimeIcon />
-                  </p>
-                  Transfer Included
-                </li>
-                <li>
-                  <p>
-                    <AccessTimeIcon />
-                  </p>
-                  Hotel Pickup
-                </li>
-                <li>
-                  <p>
-                    <AccessTimeIcon />
-                  </p>
-                  Meals Included
-                </li>
+                  )
+                })}
+               
               </ul>
             </div>
             <div className="heading-right-col">

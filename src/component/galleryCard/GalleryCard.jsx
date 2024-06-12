@@ -5,14 +5,8 @@ import MiniGalleryCard from './MiniGalleryCard'
 const GalleryCard = () => {
   return (
     <div className='gallery-card-container'>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
-      <MiniGalleryCard/>
+    
+    <MiniGalleryCard/>
     </div>
   )
 }

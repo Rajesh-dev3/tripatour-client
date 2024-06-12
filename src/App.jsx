@@ -1,7 +1,7 @@
 
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./routes/ApplicationRoutes";
+import { mobileRouter, router } from "./routes/ApplicationRoutes";
 import { Provider } from "react-redux";
 import {store }from "./app/Store"
 import { ToastContainer } from "react-toastify";
@@ -12,7 +12,7 @@ function App() {
   const isMobille = useMediaQuery("(max-width:480px)")
   return (
     <Provider store = {store}>
-      <RouterProvider router={router(isMobille)} />
+      <RouterProvider router={isMobille ? mobileRouter(isMobille): router(isMobille)} />
       <ToastContainer /> 
     </Provider>
   );

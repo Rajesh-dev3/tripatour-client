@@ -52,10 +52,10 @@ const StepsTrack = () => {
         <p>Itinerary</p>
       </div>
       <div className="step-right-col">
-        {data && data?.data[0].steps?.map((item,index)=>{
+        {data && data?.data?.map((item,index)=>{
           return(
 
-            <StepCol key={item.heading+index} data={item} length={data?.data[0].steps?.length} index={index}/>
+            <StepCol key={item.heading+index} data={item} length={data?.data?.length} index={index}/>
           )
         })}
       </div>

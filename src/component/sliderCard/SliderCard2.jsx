@@ -14,8 +14,8 @@ const SliderCard2 = ({ data }) => {
         {/* <img src={data?.image}/> */}
       </div>
       <div className="bottom-col">
-        <h4 className="card-heading">{data?.description}</h4>
-        <p>{data?.timing} · Kymco/Grizzly 350CC</p>
+        <h4 className="card-heading">{data?.name}</h4>
+        <p>{data?.description}</p>
         <span>{data?.price}</span>
       </div>
     </div>

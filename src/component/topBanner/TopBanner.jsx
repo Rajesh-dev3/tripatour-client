@@ -1,5 +1,6 @@
 import { IoIosStar } from "react-icons/io";
 import { SiNike } from "react-icons/si";
+import { Link } from "react-router-dom";
 const TopBanner = () => {
   return (
     <div className="top-banner">
@@ -9,7 +10,9 @@ const TopBanner = () => {
         Experience dubai <br />
         Safari wonders!
       </h1>
+      <Link to={"/listing"}>
       <button>Explore Now</button>
+      </Link>
     </div>
     <div className="top-banner-bottom-rectangle">
       <ul>

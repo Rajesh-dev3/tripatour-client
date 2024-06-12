@@ -1,9 +1,7 @@
-import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 ///styles
 import "./mobileHome.scss"
 import MobileTag from '../../component/mobileTag/MobileTag';
-import MobileSliderComponent from '../../component/slider/MbileSlider';
 import MobileSliderCard from '../../component/mobileSliderCard/MobileSliderCard';
 const MobileHome = () => {
   return (
@@ -17,6 +15,7 @@ const MobileHome = () => {
       <div className="tag-container">
         <MobileTag />
       </div>
+      </div>
       <div className="mobile-slider-section">
         <div className="mobile-slider-heading">Top Dubai Experiences</div>
         <div className="mobile-slider-container">
@@ -26,7 +25,6 @@ const MobileHome = () => {
 <MobileSliderCard/>
         {/* <MobileSliderComponent/> */}
         </div>
-      </div>
       </div>
     </div>
   )

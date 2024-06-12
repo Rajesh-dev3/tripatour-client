@@ -33,8 +33,8 @@ const StepCol = ({data,length,index}) => {
   </div>
   <div className="step-col-desc">
     <ul>
-      <li className="step-col-desc-list-heading">{data?.name}</li>
-      <li className="step-col-desc-list">{data?.description}</li>
+      <li className="step-col-desc-list-heading">{data?.title}</li>
+      <li className="step-col-desc-list">{data?.content}</li>
     </ul>
   </div>
 </div>

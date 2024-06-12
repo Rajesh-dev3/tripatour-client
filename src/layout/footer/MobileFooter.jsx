@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 ///styles
 import "./mobileFooter.scss"
 const MobileFooter = () => {
@@ -12,8 +13,9 @@ const MobileFooter = () => {
           })}
             
          
-        
+       <li className='what-app-icon'><WhatsAppIcon/></li>
         </ul>
+       
     </div>
   )
 }

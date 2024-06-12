@@ -4,7 +4,7 @@
   filter: drop-shadow(0px 1px 3.5px rgba(101, 101, 101, 0.26));
   background-color: #ffffff;
   border: 0px solid #0b0e11;
-  position: absolute;
+  position: fixed;
   bottom: 0%;
   display: flex;
   align-items: center;
@@ -14,15 +14,29 @@
     padding: 0%;
     display: flex;
     align-items: center;
+    gap: 20px;
+    .what-app-icon{
+  
+      z-index: 444;
+      width: 20px;
+      height: 30px;
+      border-radius: 100px;
+      background-color: #00b932;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        color: white;
+        font-size: 30px;
+      }
+        }
     .active-footer-tab{
         background-color: #f61726;
         color:white;
-        display: flex;
-        flex-direction: row;
-        padding-top: 0%;
-        padding-bottom: 0%;
-     height: 30px;
-     width: 95px;
+     
+      
+    //  height: 30px;
+    //  width: 95px;
      svg{
         font-size: 22px;
      }
@@ -31,11 +45,10 @@
 //         &:nth-child(1){
 // width: 60px;
 //         }
-        height: 30px;
-        width: 75px;
+        
 
       list-style: none;
-      border-radius: 30px;
+      border-radius: 4px;
       padding-inline: 10px;
       padding-bottom: 5px;
       padding-top: 3px;
@@ -52,4 +65,5 @@
       }
     }
   }
+ 
 }

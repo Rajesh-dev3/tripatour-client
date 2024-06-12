@@ -5,13 +5,13 @@ import StarIcon from "@mui/icons-material/Star";
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 ///styles
 import "./styles.scss";
-const ListingCard = () => {
+const ListingCard = ({data}) => {
   const [value, setValue] = useState(4);
   return (
     <div className="listing-card-container">
       <div
         className="listing-card-img-col"
-        style={{ backgroundImage: `url(${cardImage})` }}
+        style={{ backgroundImage: `url(${data?.image})` }}
       ></div>
       <div className="listing-card-desc-col">
         <div className="rating">
@@ -26,7 +26,7 @@ const ListingCard = () => {
         </div>
         <div className="listing-card-desc-top-col">
           <div>
-            <h4>Morning Desert Safari</h4>
+            <h4>{data?.title}</h4>
             <div className="xtreme">
               Desert Xtreme <StarIcon /> 4.5
             </div>
@@ -73,7 +73,7 @@ const ListingCard = () => {
             </div>
             <div className="desc-bottom-right-col">
             <div className="price">
-          <h4 className="aed">AED 250.00</h4> <p className="per-night">(Per Person)</p>
+          <h4 className="aed">AED {data?.price}</h4> <p className="per-night">(Per Person)</p>
         </div>
         <div className="book-now-btn">
             <button>BOOK NOW</button>
