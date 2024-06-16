@@ -7,9 +7,11 @@ import GalleryCard from "../../component/galleryCard/GalleryCard";
 import Slider from "react-slick";
 ////styles
 import "./styles.scss";
+import FavSliderComponent from "../../component/slider/FavSlider";
+import { useGetFavoriteTourQuery } from "../../service/favourite/AddFavourite";
 const Home = () => {
   const { data } = useAllTourQuery();
-
+  const {data:favouriteData} = useGetFavoriteTourQuery()
   var settings = {
     dots: true,
     infinite: false,
@@ -50,7 +52,7 @@ const Home = () => {
     <>
    
       
-        <div className="about-section">
+        <div className="about-section" id="aboutUs">
           <div className="about-left-col">
             <img src={about} alt="" />
           </div>
@@ -79,7 +81,7 @@ const Home = () => {
         </div>
         {data?.data?.map((item) => {
           return (
-            <div className="slider-section" key={item.heading}>
+            <div className="slider-section" key={item.heading} id={item?.categoryName == "BUGGY PACKAGES"?"buggyTours":"safari"}>
               <div className="slider-heading">
                 {item?.categoryName}
                 <p className="para">{item?.category?.description}</p>
@@ -117,7 +119,21 @@ const Home = () => {
            
           </Slider>
         </div>
-    
+        <div className="slider-section" style={{marginTop:"10%"}} >
+              <div className="slider-heading">
+              Travellers' favorite choice
+                <p className="para">From Desert Sands to Celestial Canopies: Dubai Safari Expeditions</p>
+              </div>
+              <div className="slider-col slider-col">
+                <div className="slider-container">
+                
+
+                      <SliderComponent data={favouriteData?.data}/>
+                  
+                </div>
+                <div className="slider-bg"></div>
+              </div>
+            </div>
     </>
   );
 };

@@ -20,7 +20,7 @@
     }
   }
   .bottom-col {
-    width: calc(100% - 20px);
+    width: calc(100% - 34px);
     padding-inline: 10px;
     padding-block: 10px;
     height: 25%;
@@ -38,6 +38,10 @@
       margin: 0%;
       padding: 0%;
       text-align: left;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     p {
       text-align: left;
@@ -115,7 +119,7 @@
     }
   }
   .bottom-col {
-    width: calc(100% - 4px);
+    width: calc(100% - 24px);
     padding-inline: 2px;
     padding-block: 10px;
     height: 40%;
@@ -124,7 +128,7 @@
     flex-direction: column;
     justify-content: left;
     .card-heading {
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 0px;
       text-transform: uppercase;
       color: $heading;

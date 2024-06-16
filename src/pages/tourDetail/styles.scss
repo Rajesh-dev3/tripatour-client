@@ -6,7 +6,7 @@
   gap: 25px;
   margin-top: 5%;
   .tour-detail-left-col {
-    width: 75%;
+    width: 70%;
     // @include media(tablet){
 
     //  width: 100%;
@@ -23,6 +23,9 @@
           line-height: 40px;
           color: #464646;
           font-weight: bold;
+          @include media(largeHug){
+            font-size: 28px;
+          }
         }
         ul {
           margin: 0%;
@@ -30,6 +33,7 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          flex-wrap: wrap;
           li {
             list-style: none;
             font-size: 13px;

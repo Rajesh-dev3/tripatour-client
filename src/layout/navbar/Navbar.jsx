@@ -11,18 +11,22 @@ export const navList = [
   {
     name: "home",
     del: "Explore desert wonders",
+    link:"#"
   },
   {
     name: "About Us",
     del: "Discovering desert adventures",
+    link:"#aboutUs"
   },
   {
     name: "Buggy Tours",
     del: "Off-road adventures",
+    link:"#buggyTours"
   },
   {
     name: "Safari",
     del: "Wild life adventure Journey",
+    link:"#safari"
   },
 ];
 const Navbar = ({ fun }) => {
@@ -70,14 +74,17 @@ const Navbar = ({ fun }) => {
         <ul>
           {navList?.map((item, index) => {
             return (
+              <a href={item?.link}  key={item.name}>
+
               <li
-                key={item.name}
+               
                 onClick={() => activeLinkHandler(index)}
                 className={`${activeTab === index ? "active-nav" : ""}`}
-              >
+                >
                 {item?.name}
                 <span>{item?.del}</span>
               </li>
+                </a>
             );
           })}
         </ul>

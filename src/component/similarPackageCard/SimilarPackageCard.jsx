@@ -27,7 +27,7 @@ const SimilarPackageCard = ({fun}) => {
         <p>(4 Persons)</p>
         <hr />
         <div className="price">
-          <h4 className="aed">AED 250.00</h4> <p className="per-night">(Per Night | Per Person)</p>
+          <h4 className="aed">AED 250.00</h4> <p className="per-night">(Per Person)</p>
         </div>
         <div className="xtreme">
           Desert Xtreme <StarIcon /> 4.5
@@ -37,7 +37,7 @@ const SimilarPackageCard = ({fun}) => {
         </div>
       </div>
         <div className="similar-card-book-btn">
-          <button onClick={()=>fun()}>BOOK NOW</button>
+          <button onClick={()=>fun()}>Send Enquiry</button>
         </div>
     </div>
   );

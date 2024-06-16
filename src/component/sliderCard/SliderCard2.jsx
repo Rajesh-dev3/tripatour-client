@@ -8,17 +8,20 @@ const SliderCard2 = ({ data }) => {
     nav("/tour-detail/"+url)
   }
   return (
+    <a href="#">
+
     <div className="slider-card2" onClick={()=>navHandler(data?._id)}>
-      <div className="top-col" style={{ backgroundImage: `url(${cardImage})` }}>
+      <div className="top-col" style={{ backgroundImage: `url(${data?.images})` }}>
         {/* <img src={cardImage}/> */}
         {/* <img src={data?.image}/> */}
       </div>
       <div className="bottom-col">
         <h4 className="card-heading">{data?.name}</h4>
         <p>{data?.description}</p>
-        <span>{data?.price}</span>
+        <span>AED {data?.price}</span>
       </div>
     </div>
+    </a>
   );
 };
 

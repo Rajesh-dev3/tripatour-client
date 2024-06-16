@@ -3,7 +3,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 import "./mobileHome.scss"
 import MobileTag from '../../component/mobileTag/MobileTag';
 import MobileSliderCard from '../../component/mobileSliderCard/MobileSliderCard';
+import { useAllTourQuery } from '../../service/allTours/AllTours';
+import { useEffect, useState } from 'react';
 const MobileHome = () => {
+  const [categoryData, setCategoryData] = useState([])
+  const [packages, setPackages] = useState([])
+  const [checkCategory, setCheckCategory] = useState("BUGGY PACKAGES")
+  const { data } = useAllTourQuery();
+  const categoryNames = data?.data.map(category => category.categoryName);
+
+  useEffect(() => {
+    setCategoryData(categoryNames)
+  }, [data])
+  function findPackagesByCategoryName(categoryName) {
+    const category = data?.data?.find(cat => cat.categoryName === categoryName);
+    setPackages( category ? category.packages : [])
+  }
+  console.log(packages)
+useEffect(() => {
+ findPackagesByCategoryName(data?.data[0].categoryName)
+}, [data?.data])
+
   return (
     <div className='mobile-home-container'>
       <div className="center-col">
@@ -13,16 +33,14 @@ const MobileHome = () => {
         <div className="sider-icon"><MenuIcon/></div>
       </div>
       <div className="tag-container">
-        <MobileTag />
+        <MobileTag findPackagesByCategoryName={findPackagesByCategoryName} setCheckCategory={setCheckCategory} checkCategory={checkCategory} categoryData={categoryData}/>
       </div>
       </div>
       <div className="mobile-slider-section">
         <div className="mobile-slider-heading">Top Dubai Experiences</div>
         <div className="mobile-slider-container">
-<MobileSliderCard/>
-<MobileSliderCard/>
-<MobileSliderCard/>
-<MobileSliderCard/>
+          {packages.map((item,i)=><MobileSliderCard key={i} data={item}/>)}
+
         {/* <MobileSliderComponent/> */}
         </div>
       </div>

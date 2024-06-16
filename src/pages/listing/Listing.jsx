@@ -10,6 +10,7 @@ import Pagination from '@mui/material/Pagination';
 ///styles
 import "./styles.scss"
 import { useAllPackagesQuery } from '../../service/allPackages/AllPackages';
+import { Link } from 'react-router-dom';
 const Listing = () => {
     const [personName, setPersonName] = useState([]);
     const {data} = useAllPackagesQuery()
@@ -34,7 +35,7 @@ const Listing = () => {
     <>
         <div className="bred-crum">
             <ul>
-                <li>Home</li>
+            <Link to={"/"}><li>Home </li></Link>
                 <li><EastIcon/></li>
                 <li>Things to do in dubai</li>
             </ul>

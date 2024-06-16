@@ -8,6 +8,9 @@
     @include media(phone){
       width: 95%;
     }
+    @include media(largeHug){
+max-width: 1080px;
+    }
 }
 .mobile-layout-center-col{
     width: 100%;

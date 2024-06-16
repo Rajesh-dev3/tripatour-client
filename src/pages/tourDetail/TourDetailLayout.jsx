@@ -30,7 +30,7 @@ const {id} = useParams()
         <div className="tour-detail-right-col">
           <h3>Similar Package</h3>
           <SimilarPackageCard fun={handleOpen}/>
-          {!checkLoaction == "/listing"
+          {checkLoaction != "/listing"
            &&
           <DesertExtremeCard fun={handleOpen}/>
            }

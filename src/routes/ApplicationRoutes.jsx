@@ -50,7 +50,7 @@ export const mobileRouter=(isMobille) =>{
           path: "/",
           element:<MobileHome/>,
         },{
-          path:"/tour-detail",
+          path:"/tour-detail/:id",
           element:<MobileDetailPage/>
         }
       

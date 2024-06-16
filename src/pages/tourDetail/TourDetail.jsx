@@ -98,7 +98,7 @@ const TourDetail = () => {
               </ul>
             </div>
             <div className="heading-right-col">
-              <FormControl sx={{ width: "100%" }}>
+              {/* <FormControl sx={{ width: "100%" }}>
                 <BorderlessSelect
                   multiple
                   displayEmpty
@@ -123,20 +123,23 @@ const TourDetail = () => {
                     </MenuItem>
                   ))}
                 </BorderlessSelect>
-              </FormControl>
+              </FormControl> */}
             </div>
           </div>
           <DetailTabs sliderData={data} fun={fun}/>
           <StepsTrack />
+          <div id='highlights'>
+
           <div className="highlights-section">
             {detailList.map((item)=>{
               return(
-
+                
                 <DetailCard name={item?.name}  list={item?.list} key={item?.name} />
-              )
-            })}
+                )
+                })}
            
           </div>
+              </div>
           <div className="guest-review">
             <div className="guest-review-left-col">Guest Reviews</div>
             <div className="guest-review-right-col">
@@ -148,19 +151,23 @@ const TourDetail = () => {
               </ul>
             </div>
           </div>
-          <div className="house-rules">
+          {/* <div className="house-rules">
             <div className="heading-house-rule">
+
               <h4>House Rules </h4>
               <p>{houseRuleData?.description}</p>
             </div>
             <div className="house-rule-content">
+            
+
              <HouseRuleContent houseRuleData={houseRuleData}/>
+          
              
 
             </div>
 
           
-          </div>
+          </div> */}
           <div className="slider-section" >
               <div className="slider-heading">
               Travellers' favorite choice

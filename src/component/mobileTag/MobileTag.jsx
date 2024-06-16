@@ -2,22 +2,37 @@ import React, { useState } from 'react'
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 ///styles
 import "./styles.scss"
-const MobileTag = () => {
-  const [activeTag, setActiveTag] = useState(0)
-  const activeChangeHandler = (val)=>{
-    setActiveTag(val)
-  }
+const MobileTag = ({setCheckCategory,checkCategory,categoryData,findPackagesByCategoryName}) => {
+const packagesObj = {
+  "BUGGY PACKAGES":"BUGGY",
+  "DESERT SAFARI PACKAGES":"SAFARI"
+}
   return (
     <>
-    {[1,2,3,4].map((item,index)=>{
-      return <div className={`tag-col ${activeTag == index?"tag-active":"tag-not-active"}`} key={index} onClick={()=>activeChangeHandler(index)}>
+    {categoryData?.map((item,index)=>{
+      return <div className={`tag-col ${checkCategory == item?"tag-active":"tag-not-active"}`} key={index} onClick={()=>{findPackagesByCategoryName(item),setCheckCategory(item)}}>
       <div className="tag-circle">
         <LocalShippingOutlinedIcon/>
       </div>
       <div className="tag-text">
-        Safari
+        {packagesObj[item]}
       </div>
   </div>})}
+  <div className={`tag-col tag-not-active`} style={{opacity:"0.5"}}>
+      <div className="tag-circle">
+        <LocalShippingOutlinedIcon/>
+      </div>
+      <div className="tag-text">
+       Visa
+      </div>
+  </div><div className={`tag-col tag-not-active`} style={{opacity:"0.5"}}>
+      <div className="tag-circle">
+        <LocalShippingOutlinedIcon/>
+      </div>
+      <div className="tag-text">
+       Car Rental
+      </div>
+  </div>
         </>
     
   )

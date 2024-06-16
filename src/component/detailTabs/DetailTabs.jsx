@@ -49,7 +49,13 @@ const DetailTabs = ({sliderData,fun}) => {
   };
   const {id} = useParams()
   const [activeTabs, setActiveTabs] = useState(0)
-  const tabs = ["Highlights","Inclusions","Need to Know","Cancellation Policy","Reviews"]
+  const tabs = [ {
+  name:"Highlights",link:"highlights"},
+  {
+  name:"Inclusions",link:"highlights"}, {
+  name:"Need to Know",link:"highlights"},{
+  name:"Cancellation Policy",link:"highlights"},{
+  name:"Reviews",link:"highlights"}]
   const [trigger,{data}]=useAddFavouriteTourMutation()
   const addFavouriteTour = ()=>{
     trigger({tourId:id})
@@ -77,6 +83,9 @@ const DetailTabs = ({sliderData,fun}) => {
       }
   }, [id,favouriteData])
   
+  useEffect(() => {
+   setValue(sliderData?.data?.star)
+  }, [sliderData])
   return (
 
     <div className="tabs-container">
@@ -85,7 +94,10 @@ const DetailTabs = ({sliderData,fun}) => {
           {tabs.map((item,index)=>{
             return(
 
-              <li key={item} onClick={()=>setActiveTabs(index)} className={activeTabs == index?"active-tab":""}>{item}</li>
+            <a href={`#${item.link}`} key={item} >
+
+              <li onClick={()=>setActiveTabs(index)} className={activeTabs == index?"active-tab":""}>{item.name}</li>
+            </a> 
             )
           })}
          
@@ -112,13 +124,13 @@ const DetailTabs = ({sliderData,fun}) => {
         <Rating
         size="small"
   name="simple-controlled"
-  value={sliderData?.data?.star}
+  value={sliderData?.data?.star || value}
   onChange={(event, newValue) => {
     setValue(newValue);
   }}
 />
 <div className="number-rating">
-  <span>{sliderData?.data?.star}</span> <p>
+  <span>{value}</span> <p>
     Very Good
     </p>
      (44 VERIFIED RATINGS)
@@ -132,7 +144,7 @@ const DetailTabs = ({sliderData,fun}) => {
 <div className="price-booking">
 
   <div className="price"><h4>
-  AED {sliderData?.data?.price}</h4> <p>(Per Night | Per Person)</p></div>
+  AED {sliderData?.data?.price}</h4> <p>(Per Person)</p></div>
 <div className="xtreme">
   Desert Xtreme <StarIcon/> {sliderData?.data?.star}
 </div>

@@ -18,7 +18,7 @@ const ListingCard = ({data}) => {
           <Rating
             size="small"
             name="simple-controlled"
-            value={value}
+            value={data?.star}
             onChange={(event, newValue) => {
               setValue(newValue);
             }}
