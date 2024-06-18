@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import "./styles.scss";
 import FavSliderComponent from "../../component/slider/FavSlider";
 import { useGetFavoriteTourQuery } from "../../service/favourite/AddFavourite";
+import { useEffect, useRef } from "react";
 const Home = () => {
   const { data } = useAllTourQuery();
   const {data:favouriteData} = useGetFavoriteTourQuery()
@@ -48,11 +49,28 @@ const Home = () => {
       },
     ],
   };
+  const linkRef = useRef(null);
+
+  useEffect(() => {
+    // Function to handle the click on the <a> tag
+    console.log(linkRef.current,"current")
+    const handleClick = () => {
+      if (linkRef.current) {
+        linkRef.current.click(); // Simulate a click on the <a> tag
+      }
+    };
+
+    // Call handleClick function when the component mounts
+    const timeoutId = setTimeout(handleClick, 1000);
+
+    // Clear the timeout if the component unmounts or useEffect runs again
+    return () => clearTimeout(timeoutId);
+  }, [linkRef]);
   return (
     <>
    
       
-        <div className="about-section" id="aboutUs">
+        <div className="about-section" id="aboutUs" ref={linkRef}>
           <div className="about-left-col">
             <img src={about} alt="" />
           </div>

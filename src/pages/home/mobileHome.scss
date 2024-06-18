@@ -1,10 +1,10 @@
 .mobile-home-container {
   width: 100%;
-  background-image: url("../../assets/images/Mobile-Footer.jpg");
+  // background-image: url("../../assets/images/Mobile-Footer.jpg");
   height: auto;
   // display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-size: cover;
+  // background-repeat: no-repeat;
   justify-content: center;
   .center-col {
     width: 90%;
@@ -64,7 +64,9 @@
       margin-block: 20px;
       display: flex;
       gap: 20px;
+      // height: 400px;
       overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory; 
   &::-webkit-scrollbar {
   display: none;
@@ -74,3 +76,4 @@
   }
   
 }
+

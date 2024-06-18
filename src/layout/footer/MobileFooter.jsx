@@ -8,9 +8,9 @@ const MobileFooter = () => {
   return (
     <div className='mobile-footer-container'>
         <ul>
-          {["Home","My Booking","Profile"].map((item,index)=>{
+          {/* {["Home","My Booking","Profile"].map((item,index)=>{
             return <li key={item} className={`${activeFooterTab == index?"active-footer-tab":""}`} onClick={()=>setActiveFooterTab(index)}><HomeOutlinedIcon/>{item}</li>
-          })}
+          })} */}
             
          
        <li className='what-app-icon'><WhatsAppIcon/></li>

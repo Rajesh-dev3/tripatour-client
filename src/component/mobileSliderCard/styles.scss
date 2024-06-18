@@ -1,5 +1,5 @@
 .mobile-slider-card{
-    height: auto;
+    height: 290px;
     width: 250px;
     border-radius: 10px;
     overflow: hidden;
@@ -7,6 +7,7 @@
     background-color: white;
     scroll-snap-align: start;
     min-width: 250px;
+    max-height:290px;
     .card-top-col{
         height: 200px;
         width: 100%;

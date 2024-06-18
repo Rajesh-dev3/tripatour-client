@@ -16,17 +16,17 @@ export const navList = [
   {
     name: "About Us",
     del: "Discovering desert adventures",
-    link:"#aboutUs"
+    link:"/#aboutUs"
   },
   {
     name: "Buggy Tours",
     del: "Off-road adventures",
-    link:"#buggyTours"
+    link:"/#buggyTours"
   },
   {
     name: "Safari",
     del: "Wild life adventure Journey",
-    link:"#safari"
+    link:"/#safari"
   },
 ];
 const Navbar = ({ fun }) => {
