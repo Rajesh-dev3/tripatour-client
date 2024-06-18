@@ -32,16 +32,7 @@ const TourDetail = () => {
 
  
 
-    console.log(data?.data)
-    const removeCol = (name) => {
-      if(name == "highlights"){
-
-        return data && data?.data[0][name][0]
-      }else{
-        return data && data?.data[0][name]
-
-      }
-    }
+ 
     
     const detailList = [
       {
