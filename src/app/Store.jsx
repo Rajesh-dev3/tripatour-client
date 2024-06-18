@@ -9,6 +9,7 @@ import { experience } from '../service/experience/Experience'
 import { houseRule } from '../service/houseRule/HouseRule'
 import { enquiryForm } from '../service/enquiry/Enquiry'
 import { allPackages } from '../service/allPackages/AllPackages'
+import { listing } from '../service/listing/Listing'
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
     [houseRule.reducerPath]: houseRule.reducer,
     [enquiryForm.reducerPath]: enquiryForm.reducer,
     [allPackages.reducerPath]: allPackages.reducer,
+    [listing.reducerPath]:listing.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -33,9 +35,8 @@ export const store = configureStore({
   .concat(enquiryForm.middleware)
   .concat(allPackages.middleware)
   .concat(addFavouriteTour.middleware)
+  .concat(listing.middleware)
   ,
 })
 
-// optional, but required for refetchOnFocus/refetchOnReconnect behaviors
-// see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
 setupListeners(store.dispatch)

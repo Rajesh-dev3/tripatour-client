@@ -6,6 +6,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import ListingCard from '../../component/listingCard/ListingCard';
 import FavSliderComponent from '../../component/slider/FavSlider';
 import { useGetFavoriteTourQuery } from '../../service/favourite/AddFavourite';
+import {useListingQuery} from "../../service/listing/Listing"
 import Pagination from '@mui/material/Pagination';
 ///styles
 import "./styles.scss"
@@ -13,7 +14,10 @@ import { useAllPackagesQuery } from '../../service/allPackages/AllPackages';
 import { Link } from 'react-router-dom';
 const Listing = () => {
     const [personName, setPersonName] = useState([]);
-    const {data} = useAllPackagesQuery()
+    const {data,isLoading} = useListingQuery()
+    console.log(data?.data,"l")
+
+    // const {data} = useAllPackagesQuery()
     const names = [
         "25",
         "50",
