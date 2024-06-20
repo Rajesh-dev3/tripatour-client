@@ -67,6 +67,7 @@ const TourDetail = () => {
   const houseRuleData = houseRule && houseRule?.data[0]
   const [fun] = useOutletContext();
   const splitInfo  =data?.data?.info[0]?.split(",") 
+  
   return (
     <>
    
@@ -119,6 +120,9 @@ const TourDetail = () => {
           </div>
           <DetailTabs sliderData={data} fun={fun}/>
           <StepsTrack />
+          <div className="short-description">
+            {data?.data?.shortDescription}
+          </div>
           <div id='highlights'>
 
           <div className="highlights-section">

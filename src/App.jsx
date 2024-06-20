@@ -13,7 +13,7 @@ function App() {
   return (
     <Provider store = {store}>
       <RouterProvider router={isMobille ? mobileRouter(isMobille): router(isMobille)} />
-      <ToastContainer /> 
+      <ToastContainer style={{  marginTop: "64px" }} /> 
     </Provider>
   );
 }

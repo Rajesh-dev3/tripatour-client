@@ -16,24 +16,32 @@ import "./mobileDetail.scss";
 import { Rating } from "@mui/material";
 import { CustomAccordion } from "./styled";
 import { useDetailHighlightQuery } from "../../service/detailPage/Detail";
-import { Link, useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
+import BasicModal from "../../component/modal/Modal";
+import EnquiryForm from "../../component/enquiryForm/EnquiryForm";
+import Loader from "../../component/loader/Loader";
 const MobileDetailPage = () => {
+  const [open, setOpen] = useState(false);
+const handleOpen = () => setOpen(true);
   const { id } = useParams();
   const [value, setValue] = useState(4);
-  const { data } = useDetailHighlightQuery(id);
-  console.log(data?.data);
+  const { data,isLoading } = useDetailHighlightQuery(id);
 
   useEffect(() => {
     setValue(data?.data?.star);
   }, [data]);
-
+  
   return (
-    <div>
+    <>
+       <BasicModal  Children={<EnquiryForm setOpen={setOpen} id={id} width={"100%"}/>}  setOpen={setOpen} open={open}/>
+    <div className={`${isLoading ?"cen":""}`}>
+
+      {  isLoading ?<Loader/> :
       <div className="detail-center-col">
         <div className="mobile-detail-top-banner" style={{backgroundImage:`url(${data?.data?.images})`}}>
           <div className="mobile-deatil-banner-head">
             <div className="head-left-col">
-              <Link to={"/"}>
+              <Link to={"/"}> 
                 <div className="head-icon">
                   <KeyboardBackspaceOutlinedIcon />
                 </div>
@@ -41,7 +49,7 @@ const MobileDetailPage = () => {
               <button>Buggy Tours</button>
             </div>
             <div className="head-right-col">
-              <button>Book Now</button>
+              <button onClick={()=>handleOpen()}>Book Now</button>
               <div className="head-icon">
                 <ReplyOutlinedIcon />
               </div>
@@ -252,7 +260,10 @@ const MobileDetailPage = () => {
           </CustomAccordion>
         </div>
       </div>
+      }
     </div>
+    </>
+
   );
 };
 

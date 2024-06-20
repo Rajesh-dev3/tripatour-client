@@ -8,14 +8,21 @@ const MobileSliderCard = ({data}) => {
     nav(`/tour-detail/${url}`)
   }
   return (
-    <div className='mobile-slider-card' onClick={()=>navHandler(data?._id)}>
-        <div className="card-top-col" style={{backgroundImage:`url(${data?.images})`}}></div>
+    <>
+    {data?.map((item)=>{
+      return(
+
+    <div className='mobile-slider-card' onClick={()=>navHandler(item?._id)} key={item.name}>
+        <div className="card-top-col" style={{backgroundImage:`url(${item?.images})`}}></div>
         <div className="card-bottom-col">
-            <h5>{data?.name}</h5>
-            <span>{data?.description}</span>
-            <p>AED {data?.price}</p>
+            <h5>{item?.name}</h5>
+            <span>{item?.description}</span>
+            <p>AED {item?.price}</p>
         </div>
     </div>
+      )
+    })}
+    </>
   )
 }
 

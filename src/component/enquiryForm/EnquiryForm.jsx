@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import { useEnquiryFormMutation } from "../../service/enquiry/Enquiry";
 import { notify } from "../toast/Toast";
-const EnquiryForm = ({setOpen,id}) => {
+import CloseIcon from '@mui/icons-material/Close';
+const EnquiryForm = ({setOpen,id,width}) => {
 
   const [formdat, setFormdat] = useState({
     packageId:id,
@@ -36,7 +37,8 @@ useEffect(() => {
   return (
     <div style={{width:"100%",height:"100vh",background:"transparent"}} onClick={()=>setOpen(false)}>
 
-    <div className="enquiry-form-container" onClick={(e)=>e.stopPropagation()}>
+    <div className="enquiry-form-container" style={{width:width,marginTop:width && "15%",position:"relative"}} onClick={(e)=>e.stopPropagation()}>
+      <div className="cross" style={{color:"black",position:"absolute",right:"5%",top:"5%",zIndex:10}} onClick={()=>setOpen(false)}><CloseIcon/ ></div>
       <div className="form-center-col">
         <h2>Enquiry Form</h2>
         <p>
@@ -52,14 +54,14 @@ useEffect(() => {
             </div>
             <div className="input-col">
               <label htmlFor="">Email Adress</label>
-              <input type="text" onChange={formhandler} name="email"/>
+              <input type="email" onChange={formhandler} name="email"/>
             </div>
           </div>
           <div className="form-col">
           
             <div className="input-col">
               <label htmlFor="">Phone Number</label>
-              <input type="text" placeholder="+91" onChange={formhandler} name="phone_number"/>
+              <input type="number" placeholder="+91" onChange={formhandler} name="phone_number"/>
             </div>
             <div className="input-col">
               <label htmlFor="">No of Packs</label>

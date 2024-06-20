@@ -1,10 +1,9 @@
 .mobile-home-container {
   width: 100%;
-  // background-image: url("../../assets/images/Mobile-Footer.jpg");
+  background-image: url("../../assets/images/Mobile-Footer.jpg");
   height: auto;
-  // display: flex;
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
   .center-col {
     width: 90%;
@@ -41,7 +40,7 @@
   .mobile-slider-section{
     width:calc(100% - 5%);
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 10%;
     padding-bottom: 5%;
     .mobile-slider-heading{
       font-size: 22px;
@@ -75,5 +74,10 @@
     
   }
   
+}
+.cen{
+  display: flex;
+  justify-content:center;
+align-items: center;
 }
 
