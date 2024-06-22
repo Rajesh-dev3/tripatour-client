@@ -78,7 +78,6 @@ var settings = {
   ],
 };
 const {data:listingData,isLoading:listingLoading} = useListingQuery()
-console.log(listingData,"listingData")
   return (
     <div className='mobile-home-container'>
       <div className="mobil-top-banner">
