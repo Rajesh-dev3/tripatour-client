@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 const Listing = () => {
     const [personName, setPersonName] = useState([]);
     const {data,isLoading} = useListingQuery()
-    console.log(data?.data,"l")
+
 
     // const {data} = useAllPackagesQuery()
     const names = [

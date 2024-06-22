@@ -151,12 +151,12 @@ const DetailTabs = ({sliderData,fun}) => {
 <div className="book-btn">
   <button onClick={()=>fun()}>BOOK NOW</button>
 </div>
-<div className="pickup-drop-time">
+{/* <div className="pickup-drop-time">
   <ul>
     <li><span>PICKUP TIME</span>9:00AM | 23-FEB 2023</li>
     <li><span>DROP TIME</span>9:00AM | 23-FEB 2023</li>
   </ul>
-</div>
+</div> */}
 <div className="map">
 <iframe src= {sliderData?.data?.map}
  style={{border:"0px"}}  loading="lazy" ></iframe>

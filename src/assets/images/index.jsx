@@ -5,4 +5,5 @@ import cardImage from "./cardImage.jpg"
 import topBanner from "./Home-Top-Banner.jpg"
 import desertExtreme from "./desert-xtreme-logo.png"
 import mobileLogo from "./mobile-logo.png"
-export {logo,about,buggy,cardImage,topBanner,desertExtreme,mobileLogo}
+import mobileTopBanner from "./Tripatour-Image.jpg"
+export {logo,about,buggy,cardImage,topBanner,desertExtreme,mobileLogo,mobileTopBanner}

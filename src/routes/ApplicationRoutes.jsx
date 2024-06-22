@@ -6,6 +6,7 @@ import Listing from "../pages/listing/Listing";
 import TourDetailLayout from "../pages/tourDetail/TourDetailLayout";
 import MobileHome from "../pages/home/MobileHome";
 import MobileDetailPage from "../pages/tourDetail/MobileDetailPage";
+import NotFound from "../pages/notFound/NotFound";
 
 export const router=(isMobille) =>{
   return createBrowserRouter([
@@ -31,13 +32,13 @@ export const router=(isMobille) =>{
             
           }]
         },
-        {
-          path:"*", 
-          element:"<NotFound />"
-        }
-      
+        
       ],
     },
+    {
+      path:"*", 
+      element:<NotFound />
+    }
   ]);
 } 
 export const mobileRouter=(isMobille) =>{
@@ -55,11 +56,12 @@ export const mobileRouter=(isMobille) =>{
         }
       
         ,
-        {
-          path:"*", 
-          element:"<NotFound />"
-        }
+      
       ],
     },
+    {
+      path:"*", 
+      element:<NotFound />
+    }
   ]);
 } 
