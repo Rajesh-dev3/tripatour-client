@@ -8,13 +8,14 @@ import { useNavigate } from 'react-router-dom'
 const MobileSliderCard = ({data}) => {
   const nav = useNavigate()
   const navHandler = (url)=>{
+    console.log(url)
     nav(`/tour-detail/${url}`)
   }
   return (
     <>
     {/* {data?.map((item)=>{ */}
 
-    <div className='mobile-slider-card' onClick={()=>navHandler(data?._id)} key={data.name}>
+    <div className='mobile-slider-card' onClick={()=>navHandler(data?.name)} key={data.name}>
       
         <div className="card-top-col" style={{backgroundImage:`url(${data?.images})`}}>
           <div className="bike"><p>quad bike</p> </div>

@@ -21,7 +21,7 @@ const handleOpen = () => setOpen(true);
 const {id} = useParams()
   return (
     <>
-     <BasicModal Children={<EnquiryForm setOpen={setOpen} id={id}/>}  setOpen={setOpen} open={open}/>
+     <BasicModal Children={<EnquiryForm setOpen={setOpen} id={id} width={""}/>}  setOpen={setOpen} open={open}/>
       <div className="tour-detail-container">
         <div className="tour-detail-left-col">
        <Outlet context={[handleOpen]}/>

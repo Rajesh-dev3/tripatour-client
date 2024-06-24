@@ -63,8 +63,8 @@ const TourDetail = () => {
       "Virginia Andrews",
       "Kelly Snyder",
     ];
-  const {data:houseRule} = useHouseRuleQuery(id)
-  const houseRuleData = houseRule && houseRule?.data[0]
+  // const {data:houseRule} = useHouseRuleQuery(id)
+  // const houseRuleData = houseRule && houseRule?.data[0]
   const [fun] = useOutletContext();
   const splitInfo  =data?.data?.info[0]?.split(",") 
   

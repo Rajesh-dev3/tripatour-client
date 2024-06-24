@@ -20,6 +20,8 @@ import { FaArrowDown } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { logo, mobileLogo, mobileTopBanner } from '../../assets/images/index.jsx';
 import { useListingQuery } from '../../service/listing/Listing.js';
+import { useEnquiryFormMutation } from '../../service/enquiry/Enquiry.js';
+import { notify } from '../../component/toast/Toast.jsx';
 
 
 
@@ -29,18 +31,18 @@ const MobileHome = () => {
   const [packages, setPackages] = useState([])
   const [checkCategory, setCheckCategory] = useState("BUGGY PACKAGES")
   const { data,isLoading } = useAllTourQuery();
-  const categoryNames = data?.data.map(category => category.categoryName);
+  const categoryNames = data?.data?.map(category => category?.categoryName);
 
   useEffect(() => {
     setCategoryData(categoryNames)
   }, [data])
   function findPackagesByCategoryName(categoryName) {
-    const category = data?.data?.find(cat => cat.categoryName === categoryName);
+    const category = data?.data?.find(cat => cat?.categoryName === categoryName);
     setPackages( category ? category.packages : [])
   }
 
 useEffect(() => {
- findPackagesByCategoryName(data?.data[0].categoryName)
+ findPackagesByCategoryName(data?.data[0]?.categoryName)
 }, [data?.data])
 var settings = {
   dots: true,
@@ -78,9 +80,13 @@ var settings = {
   ],
 };
 const {data:listingData,isLoading:listingLoading} = useListingQuery()
+
   return (
     <div className='mobile-home-container'>
       <div className="mobil-top-banner">
+        <a href="#category">
+
+      
         <div className="btn-banner">
         <div className='let-start'>
            let's start
@@ -91,6 +97,7 @@ const {data:listingData,isLoading:listingLoading} = useListingQuery()
 
           </div>
       </div>
+      </a>
         <img src={mobileTopBanner} alt="" />
       </div>
       <div className="center-col">
@@ -104,7 +111,7 @@ const {data:listingData,isLoading:listingLoading} = useListingQuery()
         <MobileTag findPackagesByCategoryName={findPackagesByCategoryName} setCheckCategory={setCheckCategory} checkCategory={checkCategory} categoryData={categoryData}/>
       </div> */}
       </div>
-      <div className="categories">
+      <div className="categories" id='category'>
         <div className="mobile-slider-heading">
 
           Categories

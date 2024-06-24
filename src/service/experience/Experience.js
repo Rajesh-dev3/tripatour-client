@@ -14,7 +14,7 @@ export const experience = createApi({
   endpoints: (builder) => ({
     experience: builder.query({
       query: (id) => ({
-        url: `itenarery/get/${id}`,
+        url: `itenarery/get?name=${id}`,
         method: "GET",
       }),
     }),

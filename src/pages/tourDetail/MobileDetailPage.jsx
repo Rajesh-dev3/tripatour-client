@@ -110,7 +110,7 @@ const handleOpen = () => setOpen(true);
         <hr />
         <div className="detail-description">
           {data?.data?.description}
-          <span>SHOW MORE</span>
+          {/* <span>SHOW MORE</span> */}
         </div>
         <div className="experience-section">
           <h2>Experience</h2>

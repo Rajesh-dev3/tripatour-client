@@ -64,7 +64,7 @@ useEffect(() => {
               <input type="number" placeholder="+91" onChange={formhandler} name="phone_number"/>
             </div>
             <div className="input-col">
-              <label htmlFor="">No of Packs</label>
+              <label htmlFor="">No of Pax</label>
               <input type="text" onChange={formhandler} name="peopleInfo"/>
             </div>
           </div>
