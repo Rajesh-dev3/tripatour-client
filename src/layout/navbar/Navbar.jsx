@@ -98,7 +98,7 @@ const Navbar = ({ fun }) => {
             <span>
               <ImWhatsapp />
             </span>
-            +971 56 188 5977
+            +971 526063261
           </li>
         </ul>
       </div>

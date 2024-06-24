@@ -99,16 +99,18 @@ const Footer = () => {
       </div>
       <div className="address">
         <ul>
-          <li>DUBAI: +76 1273 074 734</li>
-          <li>INDIA: +91 98550 56307</li>
+          <li>DUBAI: +971 526063261</li>
+          <li>INDIA: +91 9205960841</li>
           <li>enquiries@tripatours.com</li>
 
-          <li>
-            Studio 65, roussefield,
-            <br />
-            DUBAI, 768364
-            <br />
-            United ARAB Emirates
+          <li>Addres: Retreat by Sharjah Collection - 
+          <br />
+          Madam Rd - near Al Badayer - 
+          <br />
+          Al Badayer - Sharjah - United
+           Arab Emirates
+          
+           
           </li>
         </ul>
       </div>
