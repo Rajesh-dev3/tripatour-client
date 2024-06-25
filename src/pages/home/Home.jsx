@@ -66,6 +66,9 @@ const Home = () => {
     // Clear the timeout if the component unmounts or useEffect runs again
     return () => clearTimeout(timeoutId);
   }, [linkRef]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
    

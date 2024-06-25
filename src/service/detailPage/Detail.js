@@ -14,7 +14,7 @@ export const detail = createApi({
   endpoints: (builder) => ({
     detailHighlight: builder.query({
       query: (body) => ({
-        url: `/package/client/PackageGetByName?name=${body}`,
+        url: `/package/client/PackageGetById/${body}`,
         method: "GET",
       }),
     }),

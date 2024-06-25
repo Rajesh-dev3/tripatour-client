@@ -23,6 +23,7 @@ const Mainlayout = () => {
     }
   }, [siderOpen]);
   const isMobile = useMediaQuery("(max-width:480px)")
+  
   return (
     <>
     {isMobile?

@@ -10,7 +10,7 @@ const SliderCard2 = ({ data }) => {
   return (
     <a href="#">
 
-    <div className="slider-card2" onClick={()=>navHandler(data?.name)}>
+    <div className="slider-card2" onClick={()=>navHandler(data?._id)}>
       <div className="top-col" style={{ backgroundImage: `url(${data?.images})` }}>
         {/* <img src={cardImage}/> */}
         {/* <img src={data?.image}/> */}

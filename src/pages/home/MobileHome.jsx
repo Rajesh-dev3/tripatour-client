@@ -80,7 +80,9 @@ var settings = {
   ],
 };
 const {data:listingData,isLoading:listingLoading} = useListingQuery()
-
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
   return (
     <div className='mobile-home-container'>
       <div className="mobil-top-banner">

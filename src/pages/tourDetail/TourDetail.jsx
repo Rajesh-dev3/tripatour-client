@@ -67,7 +67,9 @@ const TourDetail = () => {
   // const houseRuleData = houseRule && houseRule?.data[0]
   const [fun] = useOutletContext();
   const splitInfo  =data?.data?.info[0]?.split(",") 
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
    

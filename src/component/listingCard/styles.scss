@@ -27,7 +27,7 @@
       justify-content: space-between;
       div {
         h4 {
-          font-size: 22px;
+          font-size: 18px;
           letter-spacing: -1px;
           color: #464646;
           font-weight: bold;
@@ -165,6 +165,7 @@
           text-align: end;
           margin-top: 10px;
           button {
+            cursor: pointer;
             font-size: 15px;
             letter-spacing: 2px;
             text-transform: uppercase;

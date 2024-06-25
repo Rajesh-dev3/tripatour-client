@@ -6,6 +6,7 @@ import FastfoodIcon from '@mui/icons-material/Fastfood';
 
 ///styles
 import "./styles.scss";
+import { Link } from "react-router-dom";
 const ListingCard = ({data}) => {
   const [value, setValue] = useState(4);
   const infoSplit = data?.info[0]?.split(",")
@@ -69,7 +70,10 @@ const ListingCard = ({data}) => {
           <h4 className="aed">AED {data?.price}</h4> <p className="per-night">(Per Person)</p>
         </div>
         <div className="book-now-btn">
-            <button>BOOK NOW</button>
+         <Link to={`/tour-detail/${data?._id}`}>
+         
+             <button>VIEW MORE</button>
+          </Link>
         </div>
             </div>
         </div>
