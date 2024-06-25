@@ -194,7 +194,7 @@ const modelObj  = {
         </div>
         <ul className='footer-menu'>
           <li onClick={()=>openModelHandler(0)}>About</li>
-          <li  onClick={()=>openModelHandler(1)}>contact us</li>
+          <li  >contact us</li>
           <li  onClick={()=>openModelHandler(2)}>privacy ploicy</li>
           <li onClick={()=>openModelHandler(3)}>Terms & conditions</li>
         </ul>
