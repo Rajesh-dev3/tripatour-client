@@ -8,6 +8,7 @@ import FavSliderComponent from '../../component/slider/FavSlider';
 import { useGetFavoriteTourQuery } from '../../service/favourite/AddFavourite';
 import {useListingQuery} from "../../service/listing/Listing"
 import Pagination from '@mui/material/Pagination';
+import Loader from '../../component/loader/Loader';
 ///styles
 import "./styles.scss"
 import { useAllPackagesQuery } from '../../service/allPackages/AllPackages';
@@ -36,6 +37,10 @@ const Listing = () => {
       };
       const {data:favouriteData} = useGetFavoriteTourQuery()
   return (
+    <>
+     {isLoading ? (
+        <Loader />
+      ) :
     <>
         <div className="bred-crum">
             <ul>
@@ -132,6 +137,8 @@ const Listing = () => {
               </FormControl>
             </div>
         </div>
+    </>
+    }
     </>
   )
 }

@@ -13,10 +13,11 @@ import HouseRuleContent from "../../component/houseRuleContent/HouseRuleContent"
 import {  useDetailHighlightQuery } from '../../service/detailPage/Detail';
 import { useOutletContext, useParams } from 'react-router-dom';
 import { useHouseRuleQuery } from '../../service/houseRule/HouseRule';
+import Loader from "../../component/loader/Loader"
 
 const TourDetail = () => {
 
-    const {data:favouriteData} = useGetFavoriteTourQuery()
+    const {data:favouriteData,isLoading:getFavorite} = useGetFavoriteTourQuery()
     const [personName, setPersonName] = useState([]);
     const {id} = useParams()
     const handleChange = (event) => {
@@ -28,9 +29,9 @@ const TourDetail = () => {
         typeof value === "string" ? value.split(",") : value
       );
     };
-    const {data}=useDetailHighlightQuery(id)
+    const {data,isLoading:datailHighlight}=useDetailHighlightQuery(id)
 
- 
+ const AllLoading =  datailHighlight || getFavorite
 
  
     
@@ -71,6 +72,10 @@ const TourDetail = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
+    <>
+     {AllLoading ? (
+        <Loader />
+      ) : 
     <>
    
            <div className="heading">
@@ -180,6 +185,8 @@ const TourDetail = () => {
                 <div className="slider-bg"></div>
               </div>
             </div>
+    </>
+    }
     </>
   )
 }

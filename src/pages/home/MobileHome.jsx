@@ -22,8 +22,12 @@ import { logo, mobileLogo, mobileTopBanner } from '../../assets/images/index.jsx
 import { useListingQuery } from '../../service/listing/Listing.js';
 import { useEnquiryFormMutation } from '../../service/enquiry/Enquiry.js';
 import { notify } from '../../component/toast/Toast.jsx';
+import BasicModal from '../../component/modal/Modal.jsx';
 
-
+import AboutUsPop from "../../component/aboutUsPop/AboutUsPop.jsx"
+import ContactUs from '../../component/aboutUsPop/ContactUs.jsx';
+import PrivacyPolicy from '../../component/aboutUsPop/PrivacyPolicy.jsx';
+import TermsandConditions from '../../component/aboutUsPop/TermsandConditions.jsx';
 
 const MobileHome = () => {
   
@@ -83,7 +87,23 @@ const {data:listingData,isLoading:listingLoading} = useListingQuery()
 useEffect(() => {
   window.scrollTo(0, 0);
 }, []);
+const [open,setOpen] = useState(false)
+const [modelOpenVal,setModelOpenVal] = useState(false)
+const openModelHandler = (val)=>{
+  setModelOpenVal(val)
+  setOpen(true)
+}
+
+
+const modelObj  = {
+  0:<AboutUsPop setOpen={setOpen}/>,
+  1:<ContactUs setOpen={setOpen}/>,
+  2:<PrivacyPolicy setOpen={setOpen}/>,
+  3:<TermsandConditions setOpen={setOpen}/>,
+}
   return (
+    <>
+    <BasicModal Children={modelObj[modelOpenVal]}  setOpen={setOpen} open={open}/>
     <div className='mobile-home-container'>
       <div className="mobil-top-banner">
         <a href="#category">
@@ -166,10 +186,10 @@ useEffect(() => {
           <img src={mobileLogo} alt="" />
         </div>
         <ul className='footer-menu'>
-          <li>About</li>
-          <li>contact us</li>
-          <li>privacy ploicy</li>
-          <li>terms & conditions</li>
+          <li onClick={()=>openModelHandler(0)}>About</li>
+          <li  onClick={()=>openModelHandler(1)}>contact us</li>
+          <li  onClick={()=>openModelHandler(2)}>privacy ploicy</li>
+          <li onClick={()=>openModelHandler(3)}>Terms & conditions</li>
         </ul>
           <ul className='footer-icon'>
             <li><FaYoutube />
@@ -188,6 +208,8 @@ useEffect(() => {
       </div>
       </div>
     </div>
+    </>
+
   )
 }
 

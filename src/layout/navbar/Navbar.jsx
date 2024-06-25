@@ -94,12 +94,14 @@ const Navbar = ({ fun }) => {
           <li>
             <span></span> For Queries Email Us
           </li>
+          <a href="https://api.whatsapp.com/send?phone=+971526063261&amp;text=Hi,%20I%20would%20like%20to%20know%20more%20details" style={{color:"white", textDecoration:"none"}}>
           <li>
             <span>
               <ImWhatsapp />
             </span>
             +971 526063261
           </li>
+          </a>
         </ul>
       </div>
     </div>

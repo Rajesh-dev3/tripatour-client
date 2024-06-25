@@ -67,6 +67,8 @@
         color: $white;
         height: 100%;
       }
+
+        
     }
   }
   .contact-info {
@@ -113,7 +115,11 @@
     }
   }
   .contact-info {
+    
     ul {
+      a{
+        color: $black;
+      }
       li {
         color: $black;
       }
