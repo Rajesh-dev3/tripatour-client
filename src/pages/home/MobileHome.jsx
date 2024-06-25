@@ -22,6 +22,7 @@ import { logo, mobileLogo, mobileTopBanner } from '../../assets/images/index.jsx
 import { useListingQuery } from '../../service/listing/Listing.js';
 import { useEnquiryFormMutation } from '../../service/enquiry/Enquiry.js';
 import { notify } from '../../component/toast/Toast.jsx';
+import { Link } from 'react-router-dom';
 
 
 
@@ -46,12 +47,14 @@ useEffect(() => {
 }, [data?.data])
 var settings = {
   dots: true,
-  infinite: false,
-  speed: 500,
+  infinite: true,
+  // speed: 500,
   slidesToShow:3,
+  loop: true,
   slidesToScroll: 3,
   variableWidth: false,
   arrows:false,
+  autoplay:true,
   responsive: [
     {
       breakpoint: 1024,
@@ -60,6 +63,8 @@ var settings = {
         slidesToScroll: 1,
         infinite: true,
         dots: true,
+        loop: true,
+        autoplay:true,
       },
     },
     {
@@ -68,6 +73,7 @@ var settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 1,
+        autoplay:true,
       },
     },
     {
@@ -75,6 +81,7 @@ var settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay:true,
       },
     },
   ],
@@ -172,19 +179,32 @@ useEffect(() => {
           <li>terms & conditions</li>
         </ul>
           <ul className='footer-icon'>
-            <li><FaYoutube />
+           <Link to={"https://youtube.com/@tripatours604?si=WwkP92zvzLwqAVJM"}>
+           <li><FaYoutube />
             </li>
-            <li><PiInstagramLogoLight />
+           </Link> 
+           <Link to={"https://www.instagram.com/tripatour?igsh=aWI4ODB3dWFpOHh3"}>
+           <li><PiInstagramLogoLight />
             </li>
-            <li><FaLinkedinIn />
+           </Link> 
+           <Link to={"https://www.linkedin.com/in/tripa-tours-3685a4264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}>
+           <li><FaLinkedinIn />
             </li>
-            <li><FaFacebookF />
+           </Link> 
+           <Link to={"https://www.facebook.com/tripatours?mibextid=LQQJ4d"}>
+           <li><FaFacebookF />
             </li>
-            <li><FaWhatsapp />
+           </Link> 
+           <Link to={"https://api.whatsapp.com/send?phone=+971526063261&amp;text=Hi,%20I%20would%20like%20to%20know%20more%20details"}>
+           <li><FaWhatsapp />
             </li>
+           </Link> 
+          
+       
+          
           </ul>
       <div className="copywrite">
-        <p><span>c</span>2024 tripatours</p>
+        <p><span>@</span>2024 tripatours</p>
       </div>
       </div>
     </div>

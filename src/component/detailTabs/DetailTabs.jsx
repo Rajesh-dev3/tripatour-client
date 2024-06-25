@@ -10,16 +10,19 @@ import { useAddFavouriteTourMutation, useGetFavoriteTourQuery } from "../../serv
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
+import { Loop } from "@mui/icons-material";
 const DetailTabs = ({sliderData,fun}) => {
   const [activePreviewImg, setActivePreviewImg] = useState("")
   const [value, setValue] =useState(4);
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
     variableWidth: false,
+    autoPlay:true,
+    Loop:true,
     responsive: [
       {
         breakpoint: 1024,

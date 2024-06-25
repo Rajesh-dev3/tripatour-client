@@ -45,7 +45,7 @@ const Form = () => {
      
        
     
-          <div className="enquiry-form-container" style={{width:"100%"}}>
+          <div className="enquiry-form-container" style={{width:"100%", marginTop:"40px" }}>
           <h1>get in touch with us</h1>
           <hr style={{width:"12%", background:"black", height:"5px"}}/>
               <p>

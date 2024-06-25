@@ -6,4 +6,9 @@ import topBanner from "./Home-Top-Banner.jpg"
 import desertExtreme from "./desert-xtreme-logo.png"
 import mobileLogo from "./mobile-logo.png"
 import mobileTopBanner from "./Tripatour-Image.jpg"
-export {logo,about,buggy,cardImage,topBanner,desertExtreme,mobileLogo,mobileTopBanner}
+import category1 from "./category-01.png"
+import category2 from "./category-02.png"
+import category3 from "./category-03.png"
+import category4 from "./category-04.png"
+import category5 from "./category-05.png"
+export {logo,about,buggy,cardImage,topBanner,desertExtreme,mobileLogo,mobileTopBanner,category1,category2,category3,category4,category5}

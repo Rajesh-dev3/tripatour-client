@@ -11,11 +11,12 @@ import SliderCard2 from "../sliderCard/SliderCard2";
 const FavSliderComponent = ({ data }) => {
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow:3,
     slidesToScroll: 3,
     variableWidth: false,
+    autoPlay:true,
     responsive: [
       {
         breakpoint: 1024,
