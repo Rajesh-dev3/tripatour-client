@@ -10,6 +10,7 @@ import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { useExperienceQuery } from "../../service/experience/Experience";
 import { useParams } from "react-router-dom";
+import Loader from "../../component/loader/Loader"
 const StepsTrack = () => {
   // const stepOb = [
   //   {
@@ -44,8 +45,12 @@ const StepsTrack = () => {
   //   }
   // ]
   const {id}= useParams()
-  const {data} = useExperienceQuery(id)
+  const {data,isLoading} = useExperienceQuery(id)
   return (
+    <>
+     {isLoading ? (
+        <Loader />
+      ) : 
     <div className="step-container">
       <div className="step-left-col">
         <h4>Experience</h4>
@@ -60,6 +65,7 @@ const StepsTrack = () => {
         })}
       </div>
     </div>
+    }</>
   );
 };
 

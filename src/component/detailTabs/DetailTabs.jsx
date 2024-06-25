@@ -11,6 +11,8 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useParams } from "react-router-dom";
 import { notify } from "../toast/Toast";
 import { Loop } from "@mui/icons-material";
+import Loader from "../loader/Loader";
+
 const DetailTabs = ({sliderData,fun}) => {
   const [activePreviewImg, setActivePreviewImg] = useState("")
   const [value, setValue] =useState(4);
@@ -59,7 +61,7 @@ const DetailTabs = ({sliderData,fun}) => {
   name:"Need to Know",link:"highlights"},{
   name:"Cancellation Policy",link:"highlights"},{
   name:"Reviews",link:"highlights"}]
-  const [trigger,{data}]=useAddFavouriteTourMutation()
+  const [trigger,{data,isLoading}]=useAddFavouriteTourMutation()
   const addFavouriteTour = ()=>{
     trigger({tourId:id})
   }
@@ -90,6 +92,10 @@ const DetailTabs = ({sliderData,fun}) => {
    setValue(sliderData?.data?.star)
   }, [sliderData])
   return (
+    <>
+      {isLoading ? (
+        <Loader />
+      ) :
 
     <div className="tabs-container">
       <div className="tabs-title">
@@ -168,6 +174,7 @@ const DetailTabs = ({sliderData,fun}) => {
         </div>
       </div>
     </div>
+    }</>
   )
 }
 
