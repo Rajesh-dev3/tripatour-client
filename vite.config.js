@@ -14,9 +14,9 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: 'My Awesome App',
-        short_name: 'AwesomeApp',
-        description: 'My Awesome App description',
+        name: 'tripatours',
+        short_name: 'tripatour',
+        description: 'My tripatours App description',
         theme_color: '#ffffff',
         icons: [
           {
