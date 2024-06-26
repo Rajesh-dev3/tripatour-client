@@ -215,10 +215,10 @@ const modelObj  = {
            <li><FaFacebookF />
             </li>
            </Link> 
-           <Link to={"https://api.whatsapp.com/send?phone=+971526063261&amp;text=Hi,%20I%20would%20like%20to%20know%20more%20details"}>
+           <a href="https://api.whatsapp.com/send?phone=+971526063261&amp;text=Hi,%20I%20would%20like%20to%20know%20more%20details" >
            <li><FaWhatsapp />
             </li>
-           </Link> 
+           </a> 
           
        
           
