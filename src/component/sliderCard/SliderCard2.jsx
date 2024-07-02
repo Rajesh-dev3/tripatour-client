@@ -16,9 +16,16 @@ const SliderCard2 = ({ data }) => {
         {/* <img src={data?.image}/> */}
       </div>
       <div className="bottom-col">
-        <h4 className="card-heading">{data?.name}</h4>
+        
+        <h4 className="card-heading">{data?.name ? data?.name?.slice(0, 50):"..."}</h4>
         <p>{data?.description}</p>
+        <div className="span-t">
+
         <span>AED {data?.price}</span>
+         <span><strike>AED {data?.price} </strike></span>
+       
+       
+        </div>
       </div>
     </div>
     </a>

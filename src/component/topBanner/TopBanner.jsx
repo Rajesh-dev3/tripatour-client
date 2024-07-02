@@ -1,6 +1,7 @@
 import { IoIosStar } from "react-icons/io";
 import { SiNike } from "react-icons/si";
 import { Link } from "react-router-dom";
+import {tick} from "../../assets/images/"
 const TopBanner = () => {
   return (
     <div className="top-banner">
@@ -24,19 +25,19 @@ const TopBanner = () => {
         </li>
         <li>
           <span>
-            <SiNike />
+          <img src={tick} alt="" />
           </span>
           100% Customised trips
         </li>
         <li>
           <span>
-            <SiNike />
+          <img src={tick} alt="" />
           </span>
-          100% Customised trips
+          95% Customised trips
         </li>
         <li>
           <span>
-            <SiNike />
+          <img src={tick} alt="" />
           </span>
           24x7 concierge
         </li>
