@@ -17,5 +17,6 @@ import category2 from "./category-02.png"
 import category3 from "./category-03.png"
 import category4 from "./category-04.png"
 import category5 from "./category-05.png"
+import tick from "./Tick-icon.png"
 
-export {logo,about,buggy,cardImage,cardImage1,cardImage2,cardImage3,cardImage4,cardImage5,cardImage6,topBanner,desertExtreme,mobileLogo,mobileTopBanner,category1,category2,category3,category4,category5}
+export {tick,logo,about,buggy,cardImage,cardImage1,cardImage2,cardImage3,cardImage4,cardImage5,cardImage6,topBanner,desertExtreme,mobileLogo,mobileTopBanner,category1,category2,category3,category4,category5}

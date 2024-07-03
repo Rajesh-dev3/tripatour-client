@@ -152,7 +152,9 @@ const DetailTabs = ({sliderData,fun}) => {
 </div>
 <div className="price-booking">
 
-  <div className="price"><h4>
+  <div className="price"><h4 style={{fontSize: "16px",color: "#767171",}}>
+  <strike> AED {sliderData?.data?.discountPrice}/</strike></h4> </div>
+  <div className="price" style={{marginTop:"-8px"}}><h4>
   AED {sliderData?.data?.price}</h4> <p>(Per Person)</p></div>
 <div className="xtreme">
   Desert Xtreme <StarIcon/> {sliderData?.data?.star}

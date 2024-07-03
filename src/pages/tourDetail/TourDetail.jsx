@@ -128,7 +128,7 @@ const TourDetail = () => {
           <DetailTabs sliderData={data} fun={fun}/>
           <StepsTrack />
           <div className="short-description">
-            {data?.data?.shortDescription}
+         <b>Descreption:</b>  {data?.data?.shortDescription}
           </div>
           <div id='highlights'>
 
