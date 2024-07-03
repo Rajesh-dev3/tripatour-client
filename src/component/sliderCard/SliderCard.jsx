@@ -18,8 +18,8 @@ const SliderCard = ({ data }) => {
         <p>{data?.description}</p>
         <div className="span-t">
 
-         <span><strike>AED {data?.price} </strike></span>
-        <span>AED {data?.price}<p>(Per person)</p></span>
+         <span><strike>AED {data?.discountPrice || 0} </strike></span>
+        <span>AED {data?.price}</span>
         </div>
       </div>
     </div>

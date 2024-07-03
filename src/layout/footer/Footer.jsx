@@ -48,7 +48,8 @@ const Footer = () => {
     }
 
     if (isSuccess) {
-      trigger(feedbackForm);
+      const dataFeeddbackForm = {firstName:feedbackForm?.firstName+" "+ feedbackForm?.lastName,email:feedbackForm?.email}
+      trigger(dataFeeddbackForm);
     }else{
       notify("Please fill all form").error()
     }
