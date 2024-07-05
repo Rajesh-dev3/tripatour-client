@@ -1,31 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./about.scss";
-import CloseIcon from "@mui/icons-material/Close";
 
-const TermsandConditions = ({ setOpen }) => {
+
+const TermsandConditions = () => {
+  useEffect(() => {
+    window.scrollTo(0, 300);
+  }, []);
   return (
-    <div
-      style={{
-        marginTop: "71px",
-        color: "white",
-        borderRadius: "20px",
-        padding: "10px",
-        overflowY: "scroll",
-      }}
-    >
-      <div className="about-main">
-        <div
-          className="cross"
-          style={{
-            color: "black",
-            position: "absolute",
-            right: "3%",
-            top: "5%",
-          }}
-        >
-          <CloseIcon onClick={() => setOpen()} />
-        </div>
-        <h2> Terms and Conditions </h2>
+
+    <>
+        <h2 id="term&condition-policy"> Terms and Conditions </h2>
         <hr style={{ background: "black" }} />
         <h5>Package Cancellation Policy</h5>
         <ul className="bullets">
@@ -104,8 +88,8 @@ using this website, you agree to be fine with the current terms and conditions v
 <h5>Governing Law</h5>
 <p>All the claims on the Tripa Tours will be backed under the current governed laws of the Republic of India
 without any violation of the previous law provisions.</p>
-      </div>
-    </div>
+ 
+    </>
   );
 };
 

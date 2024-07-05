@@ -3,6 +3,10 @@ import { useFeedBackMutation } from "../../service/feedBack/Feedback";
 ///styles
 import "./styles.scss";
 import { notify } from "../../component/toast/Toast";
+import { Link, useLocation, useParams } from "react-router-dom";
+import RefundPolicy from "../../component/aboutUsPop/RefundPolicy";
+import AboutPolicy from "../../pages/Policys/AboutPolicy";
+
 const Footer = () => {
   const [feedbackForm, setFeedbackForm] = useState({
     firstName: "",
@@ -60,7 +64,14 @@ const Footer = () => {
      notify(data?.message).success()
     }
    }, [data])
+const [checkPath, setCheckPath] = useState("")
+
+const {pathname} = useLocation()
+   useEffect(() => {
+    setCheckPath(pathname)
+   }, [pathname])
   return (
+    <>
     <div className="footer-container">
       <div className="footer-form">
         <div className="form-heading">
@@ -110,13 +121,40 @@ const Footer = () => {
           <br />
           Al Badayer - Sharjah - United
            Arab Emirates
-          
-           
           </li>
         </ul>
       </div>
     </div>
-  );
+      <div className="footer-policy">
+    <ul className="policy">
+      {
+        checkPath == "/about-policy"?
+        <a href="#AboutPolicy">
+          About Us
+        </a>:<Link to="/about-policy"><li>About Us</li></Link>
+      }
+      
+      {checkPath == "/Contactus-policy"?
+      <a href="#Contactus-policy">Contact Us</a>:
+      <Link to="/Contactus-policy"><li>Contact Us</li></Link>
+       }
+      {checkPath == "/privacy-policy"?
+      <a href="#privacy-policy">Privacy Policy</a>:
+      <Link to="/privacy-policy"><li>Privacy Policy</li></Link>
+       }
+      {checkPath == "/refund-policy"?
+      <a href="#refund-policy">Refund and Return Policy</a>:
+      <Link to="/refund-policy"><li>Refund and Return Policy</li></Link>
+       }
+      {checkPath == "/term&condition-policy"?
+      <a href="#term&condition-policy">Term & Condition</a>:
+      <Link to="/term&condition-policy"><li>Term & Conditions</li></Link>
+       }
+   
+    </ul>
+      </div>
+</>
+);
 };
 
 export default Footer;

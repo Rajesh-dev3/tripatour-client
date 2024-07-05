@@ -33,7 +33,7 @@ const TopBanner = () => {
           <span>
           <img src={tick} alt="" />
           </span>
-          95% Customised trips
+          Local Travel Expert
         </li>
         <li>
           <span>

@@ -164,6 +164,7 @@ const Home = () => {
             <SliderComponent data={favouriteData?.data} />
           </div>
           <div className="slider-bg"></div>
+          
         </div>
       </div>
     </>

@@ -112,3 +112,37 @@
     }
   }
 }
+.footer-policy{
+  background: black;
+  width: 100%;
+  margin: 0% !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  // transform: translate(-50%, -50%);
+  height: 30px;
+  .policy{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0% !important;
+    font-size: 10px;
+    align-items: center;
+    font-family: sans-serif;
+    a{
+      color: white;
+      border-right :1px solid white;
+      text-transform:capitalize;
+      padding-right: 10px;
+      &:last-child{
+        border-right: none;
+
+      li{
+        line-height: 16px;
+        }
+      }
+    }
+  }
+}
+

@@ -29,6 +29,7 @@ import AboutUsPop from "../../component/aboutUsPop/AboutUsPop.jsx"
 import ContactUs from '../../component/aboutUsPop/ContactUs.jsx';
 import PrivacyPolicy from '../../component/aboutUsPop/PrivacyPolicy.jsx';
 import TermsandConditions from '../../component/aboutUsPop/TermsandConditions.jsx';
+import RefundPolicy from '../../component/aboutUsPop/RefundPolicy.jsx';
 
 const MobileHome = () => {
   
@@ -95,18 +96,20 @@ useEffect(() => {
   window.scrollTo(0, 0);
 }, []);
 const [open,setOpen] = useState(false)
-const [modelOpenVal,setModelOpenVal] = useState(false)
+const [modelOpenVal,setModelOpenVal] = useState(0)
 const openModelHandler = (val)=>{
   setModelOpenVal(val)
+ 
   setOpen(true)
 }
 
 
 const modelObj  = {
   0:<AboutUsPop setOpen={setOpen}/>,
-  1:<ContactUs setOpen={setOpen}/>,
+  1:<ContactUs/>,
   2:<PrivacyPolicy setOpen={setOpen}/>,
   3:<TermsandConditions setOpen={setOpen}/>,
+  4:<RefundPolicy setOpen={setOpen} />
 }
   return (
     <>
@@ -177,7 +180,7 @@ const modelObj  = {
         {/* <MobileSliderComponent/> */}
          </div> 
          
-      </div>
+      </div> 
       <div className="best-dune">
       <Slider {...settings}>
       {[1,2,3,4].map((item, index) => {
@@ -194,7 +197,8 @@ const modelObj  = {
         </div>
         <ul className='footer-menu'>
           <li onClick={()=>openModelHandler(0)}>About</li>
-          <li  >contact us</li>
+          <li>contact us</li>
+          <li  onClick={()=>openModelHandler(4)}>REFUND AND RETURN POLICY</li>
           <li  onClick={()=>openModelHandler(2)}>privacy ploicy</li>
           <li onClick={()=>openModelHandler(3)}>Terms & conditions</li>
         </ul>

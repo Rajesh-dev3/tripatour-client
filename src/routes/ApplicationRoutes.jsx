@@ -7,6 +7,11 @@ import TourDetailLayout from "../pages/tourDetail/TourDetailLayout";
 import MobileHome from "../pages/home/MobileHome";
 import MobileDetailPage from "../pages/tourDetail/MobileDetailPage";
 import NotFound from "../pages/notFound/NotFound";
+import AboutPolicy from "../pages/Policys/AboutPolicy";
+import PrivacyPolicy from "../pages/Policys/PrivacyPolicy";
+import RefundPolicy from "../pages/Policys/RefundPolicy";
+import TermsandConditions from "../pages/Policys/TermsandConditions";
+import ContactUs from "../pages/Policys/ContactUs";
 
 export const router=(isMobille) =>{
   return createBrowserRouter([
@@ -30,7 +35,34 @@ export const router=(isMobille) =>{
               path: "/listing",
               element: <Listing />,
             
-          }]
+          },
+          {
+            path: "/about-policy",
+            element: <AboutPolicy />,
+          
+        },
+          {
+            path: "/Contactus-policy",
+            element: <ContactUs />,
+          
+        },
+          {
+            path: "/privacy-policy",
+            element: <PrivacyPolicy />,
+          
+        },
+          {
+            path: "/refund-policy",
+            element: <RefundPolicy />,
+          
+        },
+          {
+            path: "/term&condition-policy",
+            element: <TermsandConditions />,
+          
+        }
+
+        ]
         },
         
       ],
